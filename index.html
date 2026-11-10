@@ -3,404 +3,337 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>泰格医药 · 商务助理实习生求职汇报 | 王静如</title>
+<title>商务助理实习生求职汇报 | 王静如</title>
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --ivory: #f5f0e6;
+  --gold-mute: #c8a868;
+  --ink-dark: #33302b;
+  --ink-light: #66625c;
+  --blush-pink: #e8b8b0;
+  --lavender: #b897c2;
+  --sage-green: #739978;
+}
+html, body {
+  background-color: var(--ivory);
+  color: var(--ink-dark);
+  font-family: "Times New Roman", "Noto Serif SC", serif;
+  line-height: 1.75;
+  position: relative;
+  overflow-x: hidden;
+}
+/* 全局暗纹花卉层 - 丝巾水印质感 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    /* 右下角大百合暗纹 */
+    radial-gradient(ellipse at 92% 94%, rgba(232, 184, 176, 0.18) 0 16%, transparent 17%),
+    radial-gradient(ellipse at 84% 86%, rgba(232, 184, 176, 0.12) 0 12%, transparent 13%),
+    radial-gradient(ellipse at 96% 82%, rgba(232, 184, 176, 0.10) 0 10%, transparent 11%),
+    /* 左下角紫花暗纹 */
+    radial-gradient(ellipse at 8% 90%, rgba(184, 151, 194, 0.14) 0 14%, transparent 15%),
+    /* 左上角铃兰细淡影 */
+    radial-gradient(ellipse at 10% 10%, rgba(115, 153, 120, 0.12) 0 12%, transparent 13%);
+}
+.page-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 72px 48px;
+  position: relative;
+  z-index: 2;
+}
+/* 页面边角独立花卉装饰 */
+.floral-deco-right-bottom {
+  position: absolute;
+  right: -120px;
+  bottom: -160px;
+  width: 540px;
+  height: 540px;
+  z-index: 1;
+  opacity: 0.22;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 45% 40%, var(--blush-pink) 0 22%, transparent 23%),
+    radial-gradient(circle at 62% 34%, var(--blush-pink) 0 16%, transparent 17%),
+    radial-gradient(circle at 36% 62%, var(--blush-pink) 0 18%, transparent 19%),
+    radial-gradient(circle at 64% 66%, var(--sage-green) 0 14%, transparent 15%),
+    radial-gradient(circle at 30% 70%, var(--lavender) 0 16%, transparent 17%);
+}
+.floral-deco-left-top {
+  position: absolute;
+  left: -80px;
+  top: 100px;
+  width: 260px;
+  height: 260px;
+  z-index: 1;
+  opacity: 0.18;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 35% 32%, var(--sage-green) 0 18%, transparent 19%),
+    radial-gradient(circle at 60% 38%, var(--blush-pink) 0 14%, transparent 15%),
+    radial-gradient(circle at 48% 60%, var(--lavender) 0 13%, transparent 14%);
+}
+/* 头部标题区 */
+.header-block {
+  border-bottom: 1px solid var(--gold-mute);
+  padding-bottom: 24px;
+  margin-bottom: 56px;
+}
+.header-block h1 {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--ink-dark);
+}
+.header-block p {
+  margin-top: 8px;
+  color: var(--ink-light);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+/* 主两栏布局 */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 64px;
+}
+/* 左侧侧边栏 */
+.sidebar {
+  position: sticky;
+  top: 60px;
+}
+.sidebar .name {
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.sidebar .title-tag {
+  font-size: 14px;
+  color: var(--ink-light);
+  margin-bottom: 32px;
+}
+.sidebar ul {
+  list-style: none;
+  margin-bottom: 36px;
+}
+.sidebar li {
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(200, 168, 104, 0.35);
+  font-size: 15px;
+  color: var(--ink-dark);
+}
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.tag {
+  font-size: 12px;
+  padding: 4px 10px;
+  border: 1px solid rgba(200, 168, 104, 0.45);
+  color: var(--ink-light);
+  letter-spacing: 0.03em;
+}
+/* 右侧正文内容区 */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.section-item {
+  position: relative;
+}
+.section-title {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+  color: var(--ink-dark);
+}
+/* 标题前铃兰标识 */
+.title-floral {
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+  background-image:
+    radial-gradient(circle at 50% 25%, #ffffff 0 22%, transparent 23%),
+    radial-gradient(circle at 42% 45%, #ffffff 0 20%, transparent 21%),
+    radial-gradient(circle at 58% 45%, #ffffff 0 20%, transparent 21%),
+    radial-gradient(circle at 45% 68%, #ffffff 0 18%, transparent 19%),
+    radial-gradient(circle at 55% 68%, #ffffff 0 18%, transparent 19%),
+    radial-gradient(circle at 50% 48%, var(--sage-green) 0 14%, transparent 15%),
+    radial-gradient(circle at 50% 72%, var(--sage-green) 0 12%, transparent 13%);
+  opacity: 0.85;
+}
+.section-item p, .section-item li {
+  font-size: 15px;
+  color: var(--ink-light);
+}
+.section-item ul {
+  padding-left: 20px;
+}
+.section-item li {
+  margin-bottom: 10px;
+}
+/* 底部分隔金线+铃兰纹样 */
+.divider-floral {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 48px 0 24px;
+}
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--gold-mute);
+  opacity: 0.65;
+}
+.divider-floral-icon {
+  width: 22px;
+  height: 22px;
+  background-image:
+    radial-gradient(circle at 50% 22%, #ffffff 0 20%, transparent 21%),
+    radial-gradient(circle at 40% 42%, #ffffff 0 18%, transparent 19%),
+    radial-gradient(circle at 60% 42%, #ffffff 0 18%, transparent 19%),
+    radial-gradient(circle at 46% 64%, #ffffff 0 16%, transparent 17%),
+    radial-gradient(circle at 54% 64%, #ffffff 0 16%, transparent 17%),
+    radial-gradient(circle at 50% 46%, var(--sage-green) 0 13%, transparent 14%),
+    radial-gradient(circle at 50% 68%, var(--sage-green) 0 11%, transparent 12%);
+  opacity: 0.7;
+}
+/* 底部总结文本 */
+.ending-text {
+  text-align: center;
+  font-size: 15px;
+  color: var(--ink-light);
+  letter-spacing: 0.02em;
+  max-width: 720px;
+  margin: 0 auto;
+}
+/* 响应式适配 */
+@media (max-width: 920px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
-
-  :root {
-    --paper: #f4ecd8;
-    --ink: #2b2b2b;
-    --green: #1f7a4c;
-    --green-light: #b7d8a8;
-    --pink: #f2a5a5;
-    --purple: #b589c7;
-    --orange: #f2a45c;
-    --line: #3a3a3a;
+  .sidebar {
+    position: static;
   }
-
-  html, body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Georgia", "Noto Serif SC", "Songti SC", serif;
-    background-image:
-      radial-gradient(circle at 10% 8%, rgba(242, 164, 92, 0.18), transparent 26%),
-      radial-gradient(circle at 88% 12%, rgba(242, 165, 165, 0.22), transparent 28%),
-      radial-gradient(circle at 15% 85%, rgba(181, 137, 199, 0.18), transparent 30%),
-      radial-gradient(circle at 85% 90%, rgba(31, 122, 76, 0.12), transparent 34%);
-    background-size: 100% 100%;
+  .floral-deco-right-bottom {
+    width: 320px;
+    height: 320px;
+    right: -80px;
+    bottom: -100px;
   }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .page {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 48px 24px 80px;
-    position: relative;
-  }
-
-  /* 顶部标题手绘横幅 */
-  .header-banner {
-    border: 3px solid var(--line);
-    border-radius: 14px;
-    background: #fffaf0;
-    padding: 18px 22px;
-    position: relative;
-    margin-bottom: 40px;
-    box-shadow: 6px 6px 0 var(--line);
-    transform: rotate(-0.6deg);
-  }
-
-  .header-banner h1 {
-    font-size: 24px;
-    letter-spacing: 1px;
-  }
-
-  .header-banner .subtitle {
-    margin-top: 6px;
-    font-size: 14px;
-    color: #444;
-  }
-
-  /* 花朵装饰 */
-  .flower {
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .flower-pink {
-    top: -40px;
-    right: 6%;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle at 45% 45%, #ffd1dc 0 35%, #f2a5a5 36% 70%, transparent 71%);
-    border-radius: 50%;
-    transform: rotate(20deg);
-    box-shadow: inset 0 0 0 3px var(--line);
-  }
-
-  .flower-purple {
-    bottom: -30px;
-    left: 4%;
-    width: 110px;
-    height: 110px;
-    background: radial-gradient(circle at 45% 45%, #d7bde2 0 30%, #b589c7 31% 68%, transparent 69%);
-    border-radius: 50%;
-    transform: rotate(-15deg);
-    box-shadow: inset 0 0 0 3px var(--line);
-  }
-
-  .leaf {
-    position: absolute;
-    z-index: 0;
-    background: var(--green);
-    border: 3px solid var(--line);
-    border-radius: 0 80% 0 80%;
-    pointer-events: none;
-  }
-
-  .leaf-1 {
+  .floral-deco-left-top {
     width: 180px;
-    height: 42px;
-    top: 120px;
-    right: -20px;
-    transform: rotate(40deg);
-    opacity: 0.85;
+    height: 180px;
+    left: -60px;
   }
-
-  .leaf-2 {
-    width: 140px;
-    height: 34px;
-    bottom: 60px;
-    left: -30px;
-    transform: rotate(-30deg);
-    opacity: 0.8;
+  .page-wrap {
+    padding: 40px 24px;
   }
-
-  /* 主体两栏布局 */
-  .layout {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 30px;
-    position: relative;
-    z-index: 2;
-  }
-
-  /* 左侧个人信息卡 */
-  .side-card {
-    border: 3px solid var(--line);
-    border-radius: 18px;
-    background: #fffaf0;
-    padding: 24px 20px;
-    box-shadow: 7px 7px 0 var(--line);
-    transform: rotate(0.8deg);
-  }
-
-  .avatar {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 3px solid var(--line);
-    background:
-      radial-gradient(circle at 35% 30%, #ffe7d6 0 20%, transparent 21%),
-      radial-gradient(circle at 60% 45%, #f2a45c 0 25%, transparent 26%),
-      linear-gradient(160deg, #f7d7c4, #f2a5a5);
-    margin: 0 auto 14px;
-    position: relative;
-  }
-
-  .avatar::before {
-    content: "";
-    position: absolute;
-    inset: -10px;
-    border-radius: 50%;
-    border: 3px dashed var(--line);
-  }
-
-  .side-card h2 {
-    text-align: center;
-    font-size: 22px;
-    margin-bottom: 4px;
-  }
-
-  .side-card .role {
-    text-align: center;
-    font-size: 13px;
-    color: #555;
-    margin-bottom: 18px;
-  }
-
-  .info-list {
-    list-style: none;
-    margin-bottom: 18px;
-  }
-
-  .info-list li {
-    padding: 8px 10px;
-    border-bottom: 2px dashed #bbb;
-    font-size: 14px;
-  }
-
-  .tag-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .tag {
-    border: 2px solid var(--line);
-    border-radius: 999px;
-    padding: 4px 10px;
-    font-size: 12px;
-    background: var(--green-light);
-  }
-
-  .tag.pink {
-    background: #ffd6dc;
-  }
-
-  .tag.purple {
-    background: #e3c7f1;
-  }
-
-  /* 右侧内容模块 */
-  .main-content {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .section {
-    border: 3px solid var(--line);
-    border-radius: 18px;
-    background: #fffaf0;
-    padding: 22px;
-    box-shadow: 7px 7px 0 var(--line);
-    position: relative;
-    transform: rotate(-0.4deg);
-  }
-
-  .section:nth-child(even) {
-    transform: rotate(0.5deg);
-  }
-
-  .section-title {
-    font-size: 20px;
-    margin-bottom: 14px;
-    padding-left: 12px;
-    border-left: 5px solid var(--green);
-  }
-
-  .section p,
-  .section li {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #333;
-  }
-
-  .section ul {
-    padding-left: 20px;
-  }
-
-  .section li {
-    margin-bottom: 8px;
-  }
-
-  /* 手绘小装饰 */
-  .doodle-line {
-    position: absolute;
-    height: 3px;
-    background: var(--line);
-    border-radius: 2px;
-  }
-
-  .doodle-1 {
-    width: 60px;
-    top: 14px;
-    right: 20px;
-    transform: rotate(-8deg);
-  }
-
-  .doodle-2 {
-    width: 40px;
-    bottom: 16px;
-    right: 30px;
-    transform: rotate(6deg);
-  }
-
-  /* 底部总结条 */
-  .summary-footer {
-    margin-top: 30px;
-    border: 3px solid var(--line);
-    border-radius: 16px;
-    background: #fffaf0;
-    padding: 20px 24px;
-    box-shadow: 7px 7px 0 var(--line);
-    text-align: center;
-    transform: rotate(0.3deg);
-  }
-
-  .summary-footer p {
-    font-size: 15px;
-    line-height: 1.8;
-  }
-
-  /* 响应式 */
-  @media (max-width: 860px) {
-    .layout {
-      grid-template-columns: 1fr;
-    }
-
-    .header-banner h1 {
-      font-size: 20px;
-    }
-
-    .flower-pink {
-      width: 110px;
-      height: 110px;
-    }
-
-    .flower-purple {
-      width: 80px;
-      height: 80px;
-    }
-  }
+}
 </style>
 </head>
-
 <body>
-  <div class="page">
-    <!-- 顶部标题 -->
-    <header class="header-banner">
-      <h1>泰格医药 · 商务助理实习生求职汇报</h1>
-      <p class="subtitle">汇报人：王静如｜CRO行业认知与个人职业规划</p>
-      <span class="flower flower-pink"></span>
-      <span class="flower flower-purple"></span>
-      <span class="leaf leaf-1"></span>
-      <span class="leaf leaf-2"></span>
+  <!-- 底层花卉装饰 -->
+  <div class="floral-deco-right-bottom"></div>
+  <div class="floral-deco-left-top"></div>
+  <div class="page-wrap">
+    <header class="header-block">
+      <h1>商务助理实习生求职汇报</h1>
+      <p>汇报人：王静如｜CRO行业认知与个人职业规划</p>
     </header>
-
-    <!-- 左右两栏主体 -->
-    <div class="layout">
-      <!-- 左栏：个人信息 -->
-      <aside class="side-card">
-        <div class="avatar"></div>
-        <h2>王静如</h2>
-        <p class="role">英语专业｜应届生｜商务助理方向</p>
-
-        <ul class="info-list">
+    <div class="grid-layout">
+      <aside class="sidebar">
+        <div class="name">王静如</div>
+        <div class="title-tag">英语专业 · 应届生 · 商务助理方向</div>
+        <ul>
           <li>雅思 7.0</li>
-          <li>英语商务邮件写作</li>
+          <li>英文商务邮件写作</li>
           <li>客户台账与信息整理</li>
           <li>海外业务对接支持</li>
         </ul>
-
-        <h4 style="margin-top:18px; margin-bottom:10px; font-size:16px;">能力标签</h4>
-        <div class="tag-group">
+        <div class="tag-row">
           <span class="tag">英文沟通</span>
-          <span class="tag pink">细致执行</span>
-          <span class="tag purple">客户跟进</span>
+          <span class="tag">细致执行</span>
+          <span class="tag">客户跟进</span>
           <span class="tag">Excel台账</span>
           <span class="tag">长期服务意识</span>
         </div>
       </aside>
-
-      <!-- 右栏：正文内容 -->
       <main class="main-content">
-        <section class="section">
-          <h3 class="section-title">01 行业与岗位认知</h3>
+        <section class="section-item">
+          <h2 class="section-title">
+            <span class="title-floral"></span>
+            01 行业与岗位认知
+          </h2>
           <ul>
             <li><strong>CRO行业：</strong>为医药研发赋能，帮助药企降低研发风险、加速新药上市；医药商务周期长，需要持续建立和维护客户信任。</li>
             <li><strong>商务助理岗位：</strong>兼具后台流程支持与海外线索开拓，完整链路包括线索挖掘、客户画像、英文触达、展会破冰、商机转化。</li>
-            <li><strong>岗位要求：</strong>需要自驱力、细致度、沟通能力，也需要接受长期跟进且暂时没有反馈的工作节奏。</li>
+            <li><strong>岗位要求：</strong>需要自驱力、细致度和沟通能力，也需要接受长期跟进且暂时没有反馈的工作节奏。</li>
           </ul>
-          <span class="doodle-line doodle-1"></span>
         </section>
-
-        <section class="section">
-          <h3 class="section-title">02 个人核心优势</h3>
+        <section class="section-item">
+          <h2 class="section-title">
+            <span class="title-floral"></span>
+            02 个人核心优势
+          </h2>
           <ul>
             <li><strong>英语能力：</strong>雅思7.0，可独立撰写英文商务邮件，支持海外客户对接与展会英文沟通。</li>
             <li><strong>业务理解：</strong>理解CRO商务转化周期较长，具备耐心跟进、持续维护客户关系的意识。</li>
             <li><strong>办公能力：</strong>熟练使用Excel进行数据整理，可搭建客户台账，记录跟进节点并复盘业务效果。</li>
             <li><strong>工作风格：</strong>细致、稳定、责任心强，适合商务流程支持、资料归档和客户信息维护。</li>
           </ul>
-          <span class="doodle-line doodle-2"></span>
         </section>
-
-        <section class="section">
-          <h3 class="section-title">03 短板与提升方案</h3>
+        <section class="section-item">
+          <h2 class="section-title">
+            <span class="title-floral"></span>
+            03 短板与提升方案
+          </h2>
           <ul>
-            <li><strong>短板：</strong>英语本科背景，医药专业知识相对不足，对临床试验术语和CRO业务细节仍需学习。</li>
+            <li><strong>短板：</strong>医药专业知识相对不足，对临床试验术语和CRO业务细节仍需学习。</li>
             <li><strong>入职前：</strong>主动了解泰格医药业务范围、CRO术语、临床试验基础和药企合作模式。</li>
-            <li><strong>入职后：</strong>跟随带教学习标书、项目资料和商务流程，在实际对接中积累医药行业词汇与业务认知。</li>
+            <li><strong>入职后：</strong>跟随带教学习标书、项目资料和商务流程，在实际对接中积累行业词汇与业务认知。</li>
           </ul>
         </section>
-
-        <section class="section">
-          <h3 class="section-title">04 实习工作计划</h3>
+        <section class="section-item">
+          <h2 class="section-title">
+            <span class="title-floral"></span>
+            04 实习工作计划
+          </h2>
           <ul>
             <li><strong>第一阶段：</strong>熟悉公司业务、内部流程、文档规范，快速上手资料整理、台账维护和基础信息核对。</li>
             <li><strong>第二阶段：</strong>独立完成英文邮件初稿、会议纪要、客户资料归档，辅助商务团队进行日常对接。</li>
             <li><strong>第三阶段：</strong>在带教指导下参与客户跟进，学习商务沟通逻辑，逐步形成对商机推进的理解。</li>
           </ul>
         </section>
-
-        <section class="section">
-          <h3 class="section-title">05 职业规划</h3>
+        <section class="section-item">
+          <h2 class="section-title">
+            <span class="title-floral"></span>
+            05 职业规划
+          </h2>
           <p><strong>短期：</strong>踏实完成实习，吃透CRO商务流程，补齐医药行业知识，稳定交付助理岗位工作。</p>
           <p style="margin-top:8px;"><strong>长期：</strong>深耕医药商务赛道，成长为熟悉国内外业务、能够独立对接客户的商务人才。</p>
         </section>
-
-        <div class="summary-footer">
+        <div class="divider-floral">
+          <div class="divider-line"></div>
+          <div class="divider-floral-icon"></div>
+          <div class="divider-line"></div>
+        </div>
+        <div class="ending-text">
           <p>我理解CRO商务看重严谨、耐心与长期积累。我愿意从助理岗位扎实做起，主动学习、稳定输出，期待加入泰格医药商务团队。</p>
         </div>
       </main>
@@ -409,5 +342,18 @@
 </body>
 </html>
 
+ 
+
+
+
+ 
+ 
+
     
-   
+
+
+
+
+       
+        
+       
