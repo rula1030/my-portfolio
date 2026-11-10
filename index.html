@@ -1,0 +1,464 @@
+{\rtf1\ansi\ansicpg936\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 <!DOCTYPE html>\
+<html lang="zh-CN">\
+<head>\
+<meta charset="UTF-8">\
+<meta name="viewport" content="width=device-width, initial-scale=1">\
+<title>\uc0\u29579 \u38745 \u22914  \'b7 \u21830 \u21153 \u21161 \u29702 \u23454 \u20064 \u29983 \u27714 \u32844 \u27719 \u25253 </title>\
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f7f1e8'/%3E%3Crect x='6' y='6' width='52' height='52' fill='none' stroke='%23c8a868' stroke-width='2'/%3E%3Ccircle cx='32' cy='26' r='7' fill='%23f2bcb2'/%3E%3Ccircle cx='42' cy='38' r='6' fill='%239c69b9'/%3E%3Ccircle cx='24' cy='40' r='5' fill='%232a7a43'/%3E%3C/svg%3E">\
+<style>\
+  :root\{\
+    --paper:#f9f4ea;\
+    --panel:rgba(251,247,239,.70);\
+    --gold:#c39a55;\
+    --gold-line:rgba(195,154,85,.55);\
+    --gold-faint:rgba(195,154,85,.26);\
+    --orange:#ee5c1c;\
+    --red:#cf4520;\
+    --pink:#f2bcb2;\
+    --purple:#9c69b9;\
+    --green:#2f7d47;\
+    --ink:#332f2a;\
+    --soft:#6a6154;\
+  \}\
+\
+  *\{margin:0;padding:0;box-sizing:border-box;\}\
+  html\{scroll-behavior:smooth;-webkit-text-size-adjust:100%;\}\
+  body\{\
+    background:var(--paper);\
+    color:var(--ink);\
+    font-family:"Noto Serif SC","Songti SC",Georgia,serif;\
+    line-height:1.9;\
+    overflow-x:hidden;\
+  \}\
+\
+  .art\{\
+    position:fixed;\
+    inset:0;\
+    z-index:0;\
+    background-image:url("https://aka.doubaocdn.com/s/ASNQqIIo68");\
+    background-size:cover;\
+    background-position:center center;\
+    background-repeat:no-repeat;\
+    background-color:#f3ede2;\
+  \}\
+\
+  .veil\{\
+    position:fixed;\
+    inset:0;\
+    z-index:1;\
+    pointer-events:none;\
+    background:\
+      radial-gradient(circle at 50% 42%, rgba(249,244,234,.04) 0%, rgba(249,244,234,.13) 55%, rgba(249,244,234,.24) 100%);\
+  \}\
+\
+  .bloom\{\
+    position:fixed;\
+    z-index:2;\
+    pointer-events:none;\
+    background-image:url("https://aka.doubaocdn.com/s/ASNQqIIo68");\
+    background-repeat:no-repeat;\
+    opacity:.82;\
+    mix-blend-mode:multiply;\
+    filter:saturate(1.12) contrast(1.02);\
+  \}\
+  .bloom-a\{\
+    left:-14vw; bottom:-12vh;\
+    width:74vw; height:74vw;\
+    background-size:230% auto;\
+    background-position:6% 90%;\
+  \}\
+  .bloom-b\{\
+    right:-16vw; top:-8vh;\
+    width:66vw; height:66vw;\
+    background-size:250% auto;\
+    background-position:95% 3%;\
+    opacity:.74;\
+  \}\
+  .bloom-c\{\
+    right:-18vw; bottom:14vh;\
+    width:52vw; height:52vw;\
+    background-size:300% auto;\
+    background-position:97% 62%;\
+    opacity:.62;\
+  \}\
+  .bloom-d\{\
+    left:-16vw; top:22vh;\
+    width:48vw; height:48vw;\
+    background-size:340% auto;\
+    background-position:2% 34%;\
+    opacity:.55;\
+  \}\
+\
+  .progress\{\
+    position:fixed;top:0;left:0;height:2px;width:0;\
+    background:linear-gradient(90deg,var(--gold),var(--orange));\
+    z-index:120;transition:width .15s linear;\
+  \}\
+\
+  .cover\{\
+    position:relative;\
+    z-index:5;\
+    min-height:100svh;\
+    display:flex;\
+    flex-direction:column;\
+    padding:20px 16px 28px;\
+  \}\
+  .cover-frame\{\
+    position:relative;\
+    flex:1;\
+    border:1px solid var(--gold-line);\
+    display:flex;\
+    flex-direction:column;\
+    justify-content:space-between;\
+    padding:18px 16px 24px;\
+  \}\
+  .cover-frame::before\{\
+    content:"";\
+    position:absolute;inset:5px;\
+    border:1px solid var(--gold-faint);\
+    pointer-events:none;\
+  \}\
+  .corner\{\
+    position:absolute;width:34px;height:34px;pointer-events:none;\
+    background:\
+      radial-gradient(circle at 34% 32%, #fff 0 15%, transparent 16%),\
+      radial-gradient(circle at 66% 30%, #fff 0 13%, transparent 14%),\
+      radial-gradient(circle at 30% 66%, #fff 0 13%, transparent 14%),\
+      radial-gradient(circle at 68% 64%, #fff 0 11%, transparent 12%),\
+      radial-gradient(circle at 50% 50%, var(--pink) 0 20%, transparent 21%);\
+    opacity:.85;\
+  \}\
+  .corner.tl\{left:-17px;top:-17px;\}\
+  .corner.tr\{right:-17px;top:-17px;\}\
+  .corner.bl\{left:-17px;bottom:-17px;\}\
+  .corner.br\{right:-17px;bottom:-17px;\}\
+\
+  .masthead\{\
+    display:flex;justify-content:space-between;align-items:baseline;gap:8px;\
+    font-family:Georgia,serif;\
+    font-size:9px;letter-spacing:.24em;text-transform:uppercase;\
+    color:#7d6240;\
+    padding-bottom:10px;\
+    border-bottom:1px solid var(--gold-faint);\
+  \}\
+\
+  .cover-main\{\
+    padding:26px 0 22px;\
+    background:linear-gradient(180deg, rgba(251,247,239,0) 0%, rgba(251,247,239,.62) 40%, rgba(251,247,239,.10) 100%);\
+  \}\
+\
+  .eyebrow\{\
+    font-family:Georgia,serif;\
+    font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;\
+    color:#7d6240;margin-bottom:14px;\
+  \}\
+  .cover-title\{\
+    font-family:"Noto Serif SC","Songti SC",serif;\
+    font-weight:400;\
+    font-size:clamp(26px,7.6vw,50px);\
+    line-height:1.46;letter-spacing:.07em;\
+    color:#2c2823;\
+    text-shadow:0 1px 14px rgba(251,247,239,.85);\
+  \}\
+  .cover-rule\{width:40px;height:1px;background:var(--gold);margin:20px 0;\}\
+  .lede\{\
+    max-width:19em;font-size:13.5px;line-height:2.05;color:#443d34;\
+    letter-spacing:.03em;text-shadow:0 1px 10px rgba(251,247,239,.9);\
+  \}\
+\
+  .enter\{\
+    margin-top:26px;\
+    display:inline-flex;align-items:center;gap:10px;\
+    padding:12px 20px;\
+    border:1px solid var(--gold-line);\
+    background:rgba(251,247,239,.90);\
+    color:#38312a;\
+    font-family:Georgia,serif;\
+    font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;\
+    cursor:pointer;transition:.35s ease;\
+  \}\
+  .enter:hover\{background:var(--orange);border-color:var(--orange);color:#fff8ee;\}\
+\
+  .cover-foot\{\
+    display:flex;justify-content:space-between;gap:10px;\
+    padding-top:12px;border-top:1px solid var(--gold-faint);\
+    font-family:Georgia,serif;\
+    font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#7d6240;\
+  \}\
+\
+  .nav\{\
+    position:sticky;top:0;z-index:60;\
+    background:rgba(251,247,239,.90);\
+    backdrop-filter:blur(12px);\
+    border-top:1px solid var(--gold-faint);\
+    border-bottom:1px solid var(--gold-line);\
+  \}\
+  .nav-inner\{\
+    display:flex;align-items:center;gap:14px;\
+    padding:0 16px;height:50px;\
+    overflow-x:auto;scrollbar-width:none;\
+  \}\
+  .nav-inner::-webkit-scrollbar\{display:none;\}\
+  .nav-brand\{\
+    flex:0 0 auto;\
+    font-family:Georgia,serif;\
+    font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:#7d6240;\
+    padding-right:14px;border-right:1px solid var(--gold-faint);\
+  \}\
+  .nav ul\{display:flex;gap:2px;list-style:none;flex:0 0 auto;\}\
+  .nav a\{\
+    display:block;white-space:nowrap;\
+    font-size:12.5px;letter-spacing:.08em;color:#443d34;text-decoration:none;\
+    padding:8px 11px;border-bottom:1px solid transparent;transition:.3s ease;\
+  \}\
+  .nav a:hover\{color:var(--orange);\}\
+  .nav a.active\{color:var(--orange);border-bottom-color:var(--orange);\}\
+\
+  .report\{position:relative;z-index:5;padding:0 12px 48px;max-width:1180px;margin:0 auto;\}\
+  .grid\{display:grid;grid-template-columns:1fr;gap:12px;padding-top:18px;\}\
+\
+  .slide\{\
+    border:1px solid var(--gold-line);\
+    background:var(--panel);\
+    backdrop-filter:blur(8px);\
+    min-height:62vh;\
+    padding:28px 24px;\
+    border-radius:2px;\
+    position:relative;\
+  \}\
+  .slide h2\{\
+    font-family:"Noto Serif SC","Songti SC",serif;\
+    font-weight:400;\
+    font-size:clamp(18px,4vw,26px);\
+    color:#2c2823;\
+    margin-bottom:18px;\
+    letter-spacing:.04em;\
+  \}\
+  .slide ul\{padding-left:1.2em;\}\
+  .slide li\{\
+    margin-bottom:14px;\
+    font-size:14px;\
+    line-height:1.85;\
+    color:#3b352e;\
+  \}\
+  .slide li::marker\{color:var(--red);\}\
+  .slide .caption\{\
+    margin-top:22px;\
+    font-size:13px;\
+    color:#594f42;\
+  \}\
+  .foot-nav\{\
+    display:flex;justify-content:space-between;\
+    margin-top:24px;\
+  \}\
+  .foot-nav button\{\
+    padding:9px 16px;\
+    border:1px solid var(--gold-line);\
+    background:rgba(255,255,255,.75);\
+    color:#3b352e;\
+    font-size:12px;\
+    cursor:pointer;\
+  \}\
+  .foot-nav button:disabled\{opacity:.35;cursor:not-allowed;\}\
+  .page-num\{\
+    font-size:12px;color:#6a6154;\
+    align-self:center;\
+  \}\
+  .back-top\{\
+    position:fixed;\
+    bottom:22px;\
+    right:18px;\
+    width:42px;height:42px;\
+    border-radius:50%;\
+    border:1px solid var(--gold-line);\
+    background:rgba(251,247,239,.9);\
+    color:#443d34;\
+    cursor:pointer;\
+    z-index:90;\
+  \}\
+</style>\
+</head>\
+<body>\
+<div class="art"></div>\
+<div class="veil"></div>\
+<div class="bloom bloom-a"></div>\
+<div class="bloom bloom-b"></div>\
+<div class="bloom bloom-c"></div>\
+<div class="bloom bloom-d"></div>\
+<div class="progress" id="progressBar"></div>\
+\
+<section class="cover" id="cover">\
+  <div class="cover-frame">\
+    <div class="corner tl"></div>\
+    <div class="corner tr"></div>\
+    <div class="corner bl"></div>\
+    <div class="corner br"></div>\
+    <div class="masthead">\
+      <span>PORTFOLIO</span>\
+      <span>2026</span>\
+    </div>\
+    <div class="cover-main">\
+      <div class="eyebrow">Candidate \'b7 Wang Jingru</div>\
+      <h1 class="cover-title">\uc0\u29579 \u38745 \u22914 <br>\u21830 \u21153 \u21161 \u29702 \u23454 \u20064 \u29983 \u27714 \u32844 \u27719 \u25253 </h1>\
+      <div class="cover-rule"></div>\
+      <p class="lede">\uc0\u33521 \u35821 \u19987 \u19994 \u65292 \u38597 \u24605 7.0\u65292 \u25797 \u38271 \u25991 \u26723 \u25972 \u29702 \u12289 \u36328 \u25991 \u21270 \u27807 \u36890 \u12289 \u21830 \u21153 \u36164 \u26009 \u32763 \u35793 \u65292 \u26399 \u24453 \u21152 \u20837 \u20986 \u28023 \u19994 \u21153 \u22242 \u38431 \u12290 </p>\
+      <button class="enter" onclick="enterReport()">ENTER \uc0\u8594 </button>\
+    </div>\
+    <div class="cover-foot">\
+      <span>ENGLISH \'b7 SPANISH</span>\
+      <span>INTERN APPLICATION</span>\
+    </div>\
+  </div>\
+</section>\
+\
+<nav class="nav" id="nav" style="display:none;">\
+  <div class="nav-inner">\
+    <div class="nav-brand">CONTENTS</div>\
+    <ul>\
+      <li><a href="#slide-0" class="nav-link active">\uc0\u34892 \u19994 \u19982 \u23703 \u20301 \u35748 \u30693 </a></li>\
+      <li><a href="#slide-1" class="nav-link">\uc0\u20010 \u20154 \u26680 \u24515 \u20248 \u21183 </a></li>\
+      <li><a href="#slide-2" class="nav-link">\uc0\u30701 \u26495 \u19982 \u25552 \u21319 </a></li>\
+      <li><a href="#slide-3" class="nav-link">\uc0\u23454 \u20064 \u35745 \u21010 </a></li>\
+      <li><a href="#slide-4" class="nav-link">\uc0\u32467 \u35821 </a></li>\
+    </ul>\
+  </div>\
+</nav>\
+\
+<main class="report" id="report" style="display:none;">\
+  <div class="grid">\
+    <div class="slide" id="slide-0">\
+      <h2>\uc0\u34892 \u19994 \u19982 \u23703 \u20301 \u35748 \u30693 </h2>\
+      <ul>\
+        <li>\uc0\u21830 \u21153 \u21161 \u29702 \u26159 \u19994 \u21153 \u30340 \u25903 \u25745 \u26530 \u32445 \u65292 \u36127 \u36131 \u36164 \u26009 \u25972 \u29702 \u12289 \u20250 \u35758 \u21327 \u35843 \u12289 \u23545 \u22806 \u23545 \u25509 \u12289 \u21830 \u21153 \u25991 \u20070 \u32763 \u35793 \u65292 \u20445 \u38556 \u19994 \u21153 \u27969 \u31243 \u39034 \u30021 \u12290 </li>\
+        <li>\uc0\u20986 \u28023 \u19994 \u21153 \u22330 \u26223 \u19979 \u65292 \u38656 \u35201 \u20860 \u39038 \u35821 \u35328 \u33021 \u21147 \u12289 \u32454 \u33268 \u24230 \u12289 \u36328 \u25991 \u21270 \u24847 \u35782 \u65292 \u29702 \u35299 \u28023 \u22806 \u23458 \u25143 \u27807 \u36890 \u20064 \u24815 \u12290 </li>\
+        <li>\uc0\u23703 \u20301 \u26680 \u24515 \u19981 \u26159 \u31616 \u21333 \u25171 \u26434 \u65292 \u32780 \u26159 \u20570 \u22909 \u20449 \u24687 \u27785 \u28096 \u12289 \u39118 \u38505 \u21069 \u32622 \u65292 \u24110 \u21161 \u19994 \u21153 \u21516 \u20107 \u20943 \u23569 \u20107 \u21153 \u24615 \u28040 \u32791 \u12290 </li>\
+      </ul>\
+      <div class="foot-nav">\
+        <button disabled>\uc0\u19978 \u19968 \u33410 </button>\
+        <span class="page-num">01 / 05</span>\
+        <button onclick="nextSlide()">\uc0\u19979 \u19968 \u33410 </button>\
+      </div>\
+    </div>\
+\
+    <div class="slide" id="slide-1">\
+      <h2>\uc0\u20010 \u20154 \u26680 \u24515 \u20248 \u21183 </h2>\
+      <ul>\
+        <li>\uc0\u33521 \u35821 \u19987 \u19994 \u65292 \u38597 \u24605 7.0\u65292 \u21487 \u29420 \u31435 \u23436 \u25104 \u21830 \u21153 \u37038 \u20214 \u12289 \u20135 \u21697 \u36164 \u26009 \u12289 \u20250 \u35758 \u32426 \u35201 \u30340 \u20013 \u33521 \u20114 \u35793 \u65307 \u27491 \u22312 \u33258 \u23398 \u35199 \u29677 \u29273 \u35821 \u12290 </li>\
+        <li>\uc0\u33021 \u25509 \u21463 \u38271 \u32447 \u12290 \u29702 \u35299 \u21307 \u33647 \u21830 \u21153 \u36716 \u21270 \u32531 \u24930 \u65292 \u19981 \u20250 \u29992 \u12300 \u20170 \u22825 \u26377 \u27809 \u26377 \u22238 \u22797 \u12301 \u34913 \u37327 \u20215 \u20540 \u65307 \u19977 \u20010 \u26376 \u27809 \u26377 \u22238 \u38899 \u65292 \u20173 \u20250 \u25353 \u33410 \u22863 \u35760 \u24405 \u12289 \u25353 \u33410 \u28857 \u20877 \u35302 \u36798 \u12290 </li>\
+        <li>\uc0\u25226 \u36319 \u36827 \u20570 \u25104 \u21487 \u22797 \u30424 \u30340 \u21488 \u36134 \u12290 \u29087 \u32451 \u20351 \u29992 Excel\u65292 \u25353 \u23458 \u25143 \u12289 \u32852 \u31995 \u20154 \u12289 \u35302 \u36798 \u26102 \u38388 \u12289 \u22238 \u22797 \u32467 \u35770 \u24314 \u21488 \u36134 \u65292 \u35753 \u27599 \u27425 \u27807 \u36890 \u30041 \u19979 \u30165 \u36857 \u12290 </li>\
+        <li>\uc0\u32454 \u33410 \u19978 \u30340 \u31283 \u23450 \u12290 \u36866 \u21512 \u21453 \u22797 \u26680 \u23545 \u30340 \u20107 \u21153 \u65306 \u26631 \u20070 \u39029 \u30721 \u12289 \u21512 \u21516 \u29256 \u26412 \u12289 \u23458 \u25143 \u25260 \u22836 \u12290 \u36825 \u31867 \u24037 \u20316 \u19981 \u20135 \u29983 \u19994 \u32489 \u65292 \u20294 \u20986 \u38169 \u20250 \u30452 \u25509 \u24433 \u21709 \u20449 \u20219 \u12290 </li>\
+      </ul>\
+      <p class="caption">\uc0\u20248 \u21183 \u19981 \u26159 \u24418 \u23481 \u35789 \u65292 \u26159 \u21487 \u34987 \u39564 \u35777 \u30340 \u21160 \u20316 \u65306 \u19968 \u23553 \u33021 \u21457 \u20986 \u21435 \u30340 \u37038 \u20214 \u12289 \u19968 \u24352 \u19981 \u20250 \u26029 \u32447 \u30340 \u21488 \u36134 \u12289 \u19968 \u27425 \u26680 \u23545 \u21040 \u26368 \u21518 \u19968 \u39029 \u30340 \u26631 \u20070 \u12290 </p>\
+      <div class="foot-nav">\
+        <button onclick="prevSlide()">\uc0\u19978 \u19968 \u33410 </button>\
+        <span class="page-num">02 / 05</span>\
+        <button onclick="nextSlide()">\uc0\u19979 \u19968 \u33410 </button>\
+      </div>\
+    </div>\
+\
+    <div class="slide" id="slide-2">\
+      <h2>\uc0\u30701 \u26495 \u19982 \u25552 \u21319 \u26041 \u21521 </h2>\
+      <ul>\
+        <li>\uc0\u32570 \u23569 \u27491 \u24335 \u21830 \u21153 \u39033 \u30446 \u23454 \u25112 \u32463 \u39564 \u65292 \u23545 \u21307 \u33647 \u34892 \u19994 \u21512 \u35268 \u12289 \u19994 \u21153 \u38142 \u36335 \u35748 \u30693 \u36824 \u22312 \u23398 \u20064 \u38454 \u27573 \u12290 </li>\
+        <li>\uc0\u24212 \u23545 \u31361 \u21457 \u22810 \u20219 \u21153 \u26102 \u65292 \u20598 \u23572 \u20250 \u20986 \u29616 \u20248 \u20808 \u32423 \u21028 \u26029 \u29369 \u35947 \u65292 \u27491 \u22312 \u23398 \u20064 \u22235 \u35937 \u38480 \u27861 \u26803 \u29702 \u27599 \u26085 \u24037 \u20316 \u12290 </li>\
+        <li>\uc0\u25552 \u21319 \u35745 \u21010 \u65306 \u20027 \u21160 \u23398 \u20064 \u34892 \u19994 \u26415 \u35821 \u12289 \u36319 \u38543 \u24102 \u25945 \u29087 \u24713 \u27969 \u31243 \u65307 \u27599 \u26085 \u19979 \u29677 \u21069 \u22797 \u30424 \u24403 \u26085 \u21488 \u36134 \u65292 \u27785 \u28096 \u26631 \u20934 \u21270 \u27169 \u26495 \u12290 </li>\
+      </ul>\
+      <div class="foot-nav">\
+        <button onclick="prevSlide()">\uc0\u19978 \u19968 \u33410 </button>\
+        <span class="page-num">03 / 05</span>\
+        <button onclick="nextSlide()">\uc0\u19979 \u19968 \u33410 </button>\
+      </div>\
+    </div>\
+\
+    <div class="slide" id="slide-3">\
+      <h2>\uc0\u23454 \u20064 \u35745 \u21010 </h2>\
+      <ul>\
+        <li>\uc0\u31532 \u19968 \u38454 \u27573 \u65288 1-2\u21608 \u65289 \u65306 \u29087 \u24713 \u20844 \u21496 \u21046 \u24230 \u12289 \u19994 \u21153 \u32447 \u12289 \u23458 \u25143 \u20998 \u31867 \u65292 \u25484 \u25569 \u21830 \u21153 \u25991 \u26723 \u35268 \u33539 \u65292 \u30475 \u25026 \u29616 \u26377 \u21488 \u36134 \u12290 </li>\
+        <li>\uc0\u31532 \u20108 \u38454 \u27573 \u65288 3-6\u21608 \u65289 \u65306 \u29420 \u31435 \u25215 \u25285 \u36164 \u26009 \u25972 \u29702 \u12289 \u32763 \u35793 \u12289 \u20250 \u35758 \u35760 \u24405 \u12289 \u23458 \u25143 \u36319 \u36827 \u21488 \u36134 \u32500 \u25252 \u65292 \u37197 \u21512 \u21516 \u20107 \u23436 \u25104 \u22522 \u30784 \u21830 \u21153 \u23545 \u25509 \u12290 </li>\
+        <li>\uc0\u31532 \u19977 \u38454 \u27573 \u65288 7\u21608 \u20197 \u21518 \u65289 \u65306 \u23581 \u35797 \u29420 \u31435 \u36755 \u20986 \u26631 \u20934 \u21270 \u30340 \u36319 \u36827 \u27169 \u26495 \u65292 \u21327 \u21161 \u25972 \u29702 \u22797 \u30424 \u26448 \u26009 \u65292 \u20027 \u21160 \u25215 \u25285 \u21147 \u25152 \u33021 \u21450 \u30340 \u23545 \u22806 \u25991 \u23383 \u27807 \u36890 \u12290 </li>\
+      </ul>\
+      <div class="foot-nav">\
+        <button onclick="prevSlide()">\uc0\u19978 \u19968 \u33410 </button>\
+        <span class="page-num">04 / 05</span>\
+        <button onclick="nextSlide()">\uc0\u19979 \u19968 \u33410 </button>\
+      </div>\
+    </div>\
+\
+    <div class="slide" id="slide-4">\
+      <h2>\uc0\u32467 \u35821 </h2>\
+      <ul>\
+        <li>\uc0\u25105 \u28165 \u26970 \u21830 \u21153 \u21161 \u29702 \u30340 \u20215 \u20540 \u34255 \u22312 \u32784 \u24515 \u12289 \u32454 \u33268 \u12289 \u25345 \u32493 \u36319 \u36827 \u37324 \u12290 </li>\
+        <li>\uc0\u24895 \u24847 \u27785 \u19979 \u24515 \u20570 \u22909 \u20107 \u21153 \u25903 \u25745 \u65292 \u25345 \u32493 \u23398 \u20064 \u34892 \u19994 \u30693 \u35782 \u65292 \u29992 \u31283 \u23450 \u12289 \u21487 \u38752 \u30340 \u36755 \u20986 \u37197 \u21512 \u20986 \u28023 \u19994 \u21153 \u22242 \u38431 \u12290 </li>\
+        <li>\uc0\u26399 \u24453 \u33719 \u24471 \u23454 \u20064 \u26426 \u20250 \u65292 \u22312 \u30495 \u23454 \u19994 \u21153 \u37324 \u25104 \u38271 \u65292 \u25104 \u20026 \u19994 \u21153 \u32447 \u19978 \u38752 \u35889 \u30340 \u25903 \u25745 \u35282 \u33394 \u12290 </li>\
+      </ul>\
+      <div class="foot-nav">\
+        <button onclick="prevSlide()">\uc0\u19978 \u19968 \u33410 </button>\
+        <span class="page-num">05 / 05</span>\
+        <button disabled>\uc0\u19979 \u19968 \u33410 </button>\
+      </div>\
+    </div>\
+  </div>\
+</main>\
+\
+<button class="back-top" id="backTop" onclick="window.scrollTo(\{top:0,behavior:'smooth'\})" style="display:none;">\uc0\u8593 </button>\
+\
+<script>\
+let currentSlide = 0;\
+const totalSlide = 5;\
+const cover = document.getElementById('cover');\
+const nav = document.getElementById('nav');\
+const report = document.getElementById('report');\
+const backTop = document.getElementById('backTop');\
+const progressBar = document.getElementById('progressBar');\
+const slides = document.querySelectorAll('.slide');\
+const navLinks = document.querySelectorAll('.nav-link');\
+\
+function enterReport()\{\
+  cover.style.display = 'none';\
+  nav.style.display = 'block';\
+  report.style.display = 'block';\
+  goSlide(0);\
+\}\
+\
+function goSlide(idx)\{\
+  currentSlide = idx;\
+  slides.forEach((el,i)=>\{\
+    if(i===idx) el.scrollIntoView(\{behavior:'smooth',block:'start'\});\
+  \})\
+  navLinks.forEach((link,i)=>\{\
+    link.classList.toggle('active',i===idx);\
+  \})\
+\}\
+function nextSlide()\{\
+  if(currentSlide < totalSlide-1) goSlide(currentSlide+1);\
+\}\
+function prevSlide()\{\
+  if(currentSlide > 0) goSlide(currentSlide-1);\
+\}\
+\
+window.addEventListener('scroll',()=>\{\
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;\
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;\
+  const scrolled = (winScroll / height)*100;\
+  progressBar.style.width = scrolled + "%";\
+  backTop.style.display = winScroll > 400 ? 'block' : 'none';\
+\})\
+\
+document.addEventListener('keydown',(e)=>\{\
+  if(report.style.display==='none') return;\
+  if(e.key==='ArrowRight') nextSlide();\
+  if(e.key==='ArrowLeft') prevSlide();\
+\})\
+</script>\
+</body>\
+</html>\
+}
