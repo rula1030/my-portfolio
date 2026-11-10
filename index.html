@@ -1,255 +1,413 @@
 <!DOCTYPE html>
-<html lang="zh‑CN">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF‑8" />
-  <meta name="viewport" content="width=device‑width, initial‑scale=1.0"/>
-  <title>王静如｜泰格医药商务助理实习生求职汇报</title>
-  <style>
-    :root{
-      --primary:#008040;
-      --primary‑light:#e6f2ec;
-      --accent‑pink:#e8d8dc;
-      --accent‑lavender:#e2e2ec;
-      --text‑main:#222;
-      --text‑gray:#4a4a4a;
-      --bg‑white:#ffffff;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>泰格医药 · 商务助理实习生求职汇报 | 王静如</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --paper: #f4ecd8;
+    --ink: #2b2b2b;
+    --green: #1f7a4c;
+    --green-light: #b7d8a8;
+    --pink: #f2a5a5;
+    --purple: #b589c7;
+    --orange: #f2a45c;
+    --line: #3a3a3a;
+  }
+
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Georgia", "Noto Serif SC", "Songti SC", serif;
+    background-image:
+      radial-gradient(circle at 10% 8%, rgba(242, 164, 92, 0.18), transparent 26%),
+      radial-gradient(circle at 88% 12%, rgba(242, 165, 165, 0.22), transparent 28%),
+      radial-gradient(circle at 15% 85%, rgba(181, 137, 199, 0.18), transparent 30%),
+      radial-gradient(circle at 85% 90%, rgba(31, 122, 76, 0.12), transparent 34%);
+    background-size: 100% 100%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    position: relative;
+  }
+
+  /* 顶部标题手绘横幅 */
+  .header-banner {
+    border: 3px solid var(--line);
+    border-radius: 14px;
+    background: #fffaf0;
+    padding: 18px 22px;
+    position: relative;
+    margin-bottom: 40px;
+    box-shadow: 6px 6px 0 var(--line);
+    transform: rotate(-0.6deg);
+  }
+
+  .header-banner h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  .header-banner .subtitle {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #444;
+  }
+
+  /* 花朵装饰 */
+  .flower {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .flower-pink {
+    top: -40px;
+    right: 6%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle at 45% 45%, #ffd1dc 0 35%, #f2a5a5 36% 70%, transparent 71%);
+    border-radius: 50%;
+    transform: rotate(20deg);
+    box-shadow: inset 0 0 0 3px var(--line);
+  }
+
+  .flower-purple {
+    bottom: -30px;
+    left: 4%;
+    width: 110px;
+    height: 110px;
+    background: radial-gradient(circle at 45% 45%, #d7bde2 0 30%, #b589c7 31% 68%, transparent 69%);
+    border-radius: 50%;
+    transform: rotate(-15deg);
+    box-shadow: inset 0 0 0 3px var(--line);
+  }
+
+  .leaf {
+    position: absolute;
+    z-index: 0;
+    background: var(--green);
+    border: 3px solid var(--line);
+    border-radius: 0 80% 0 80%;
+    pointer-events: none;
+  }
+
+  .leaf-1 {
+    width: 180px;
+    height: 42px;
+    top: 120px;
+    right: -20px;
+    transform: rotate(40deg);
+    opacity: 0.85;
+  }
+
+  .leaf-2 {
+    width: 140px;
+    height: 34px;
+    bottom: 60px;
+    left: -30px;
+    transform: rotate(-30deg);
+    opacity: 0.8;
+  }
+
+  /* 主体两栏布局 */
+  .layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* 左侧个人信息卡 */
+  .side-card {
+    border: 3px solid var(--line);
+    border-radius: 18px;
+    background: #fffaf0;
+    padding: 24px 20px;
+    box-shadow: 7px 7px 0 var(--line);
+    transform: rotate(0.8deg);
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid var(--line);
+    background:
+      radial-gradient(circle at 35% 30%, #ffe7d6 0 20%, transparent 21%),
+      radial-gradient(circle at 60% 45%, #f2a45c 0 25%, transparent 26%),
+      linear-gradient(160deg, #f7d7c4, #f2a5a5);
+    margin: 0 auto 14px;
+    position: relative;
+  }
+
+  .avatar::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    border: 3px dashed var(--line);
+  }
+
+  .side-card h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .side-card .role {
+    text-align: center;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 18px;
+  }
+
+  .info-list {
+    list-style: none;
+    margin-bottom: 18px;
+  }
+
+  .info-list li {
+    padding: 8px 10px;
+    border-bottom: 2px dashed #bbb;
+    font-size: 14px;
+  }
+
+  .tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    border: 2px solid var(--line);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 12px;
+    background: var(--green-light);
+  }
+
+  .tag.pink {
+    background: #ffd6dc;
+  }
+
+  .tag.purple {
+    background: #e3c7f1;
+  }
+
+  /* 右侧内容模块 */
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .section {
+    border: 3px solid var(--line);
+    border-radius: 18px;
+    background: #fffaf0;
+    padding: 22px;
+    box-shadow: 7px 7px 0 var(--line);
+    position: relative;
+    transform: rotate(-0.4deg);
+  }
+
+  .section:nth-child(even) {
+    transform: rotate(0.5deg);
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin-bottom: 14px;
+    padding-left: 12px;
+    border-left: 5px solid var(--green);
+  }
+
+  .section p,
+  .section li {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  .section ul {
+    padding-left: 20px;
+  }
+
+  .section li {
+    margin-bottom: 8px;
+  }
+
+  /* 手绘小装饰 */
+  .doodle-line {
+    position: absolute;
+    height: 3px;
+    background: var(--line);
+    border-radius: 2px;
+  }
+
+  .doodle-1 {
+    width: 60px;
+    top: 14px;
+    right: 20px;
+    transform: rotate(-8deg);
+  }
+
+  .doodle-2 {
+    width: 40px;
+    bottom: 16px;
+    right: 30px;
+    transform: rotate(6deg);
+  }
+
+  /* 底部总结条 */
+  .summary-footer {
+    margin-top: 30px;
+    border: 3px solid var(--line);
+    border-radius: 16px;
+    background: #fffaf0;
+    padding: 20px 24px;
+    box-shadow: 7px 7px 0 var(--line);
+    text-align: center;
+    transform: rotate(0.3deg);
+  }
+
+  .summary-footer p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  /* 响应式 */
+  @media (max-width: 860px) {
+    .layout {
+      grid-template-columns: 1fr;
     }
-    *{margin:0;padding:0;box‑sizing:border‑box;font‑family:"Noto Sans SC",system‑ui,‑apple‑system,BlinkMacSystemFont,Segoe UI,Roboto,sans‑serif;}
-    body{background:var(--bg‑white);color:var(--text‑main);line‑height:1.75;}
 
-    nav{
-      position:sticky;top:0;z‑index:99;
-      background:var(--primary);
-      padding:12px 24px;
-      border‑bottom‑left‑radius:6px;
-      border‑bottom‑right‑radius:6px;
-    }
-    nav ul{display:flex;gap:22px;flex‑wrap:wrap;list‑style:none;max‑width:1100px;margin:0 auto;}
-    nav a{color:#fff;text‑decoration:none;font‑size:14px;opacity:0.92;letter‑spacing:0.3px;}
-    nav a:hover{opacity:1;}
-
-    .container{max‑width:1100px;margin:0 auto;padding:48px 24px;}
-
-    .cover{
-      position:relative;
-      text‑align:center;
-      padding:88px 24px 64px;
-      border‑bottom:1px solid #ddd;
-      overflow:hidden;
-    }
-    .cover::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:url("./cover‑botanical.jpg") center center / cover no‑repeat;
-      opacity:0.15;
-      z‑index:0;
-    }
-    .cover > *{position:relative;z‑index:1;}
-
-    .cover h1{font‑size:32px;color:var(--primary);margin‑bottom:14px;font‑weight:600;}
-    .cover .sub{font‑size:18px;color:var(--text‑gray);margin‑bottom:10px;}
-    .cover .meta{font‑size:15px;color:#666;letter‑spacing:0.4px;}
-
-    section{margin‑bottom:70px;scroll‑margin‑top:72px;}
-    section h2{
-      font‑size:24px;color:var(--primary);
-      padding‑bottom:10px;border‑bottom:2px solid var(--primary‑light);
-      margin‑bottom:26px;font‑weight:600;
+    .header-banner h1 {
+      font-size: 20px;
     }
 
-    .two‑col{display:grid;grid‑template‑columns:1fr 1fr;gap:30px;}
-    @media(max‑width:768px){.two‑col{grid‑template‑columns:1fr;}}
-
-    .card‑green{padding:22px;background:var(--primary‑light);border‑radius:10px;}
-    .card‑pink{padding:22px;background:var(--accent‑pink);border‑radius:10px;}
-    .card‑lavender{padding:22px;background:var(--accent‑lavender);border‑radius:10px;}
-
-    h3{font‑size:18px;margin‑bottom:13px;font‑weight:600;}
-    ul{padding‑left:24px;margin‑bottom:18px;}
-    li{margin‑bottom:11px;color:var(--text‑gray);}
-
-    .timeline‑item{
-      padding:16px 20px;margin‑bottom:16px;
-      border‑left:4px solid var(--primary);
-      background:#f7faf8;
-      border‑radius:0 8px 8px 0;
+    .flower-pink {
+      width: 110px;
+      height: 110px;
     }
 
-    .summary‑box{
-      background:var(--primary‑light);
-      padding:32px;border‑radius:12px;
+    .flower-purple {
+      width: 80px;
+      height: 80px;
     }
-
-    footer{
-      text‑align:center;padding:36px;color:#777;font‑size:14px;
-      letter‑spacing:0.5px;
-    }
-  </style>
+  }
+</style>
 </head>
+
 <body>
-  <nav>
-    <ul>
-      <li><a href="#sec01">行业岗位洞察</a></li>
-      <li><a href="#sec02">核心优势胜任力</a></li>
-      <li><a href="#sec03">短板与行动路径</a></li>
-      <li><a href="#sec04">职业发展规划</a></li>
-      <li><a href="#sec05">人岗双向契合度</a></li>
-      <li><a href="#sec06">地域与稳定性</a></li>
-      <li><a href="#sec07">总结</a></li>
-    </ul>
-  </nav>
+  <div class="page">
+    <!-- 顶部标题 -->
+    <header class="header-banner">
+      <h1>泰格医药 · 商务助理实习生求职汇报</h1>
+      <p class="subtitle">汇报人：王静如｜CRO行业认知与个人职业规划</p>
+      <span class="flower flower-pink"></span>
+      <span class="flower flower-purple"></span>
+      <span class="leaf leaf-1"></span>
+      <span class="leaf leaf-2"></span>
+    </header>
 
-  <div class="container">
-    <div class="cover">
-      <h1>泰格医药 · 商务助理实习生（嘉兴）求职汇报</h1>
-      <div class="sub">岗位认知与个人职业规划</div>
-      <div class="meta">汇报人：王静如 &nbsp;|&nbsp; 2026.11.10</div>
+    <!-- 左右两栏主体 -->
+    <div class="layout">
+      <!-- 左栏：个人信息 -->
+      <aside class="side-card">
+        <div class="avatar"></div>
+        <h2>王静如</h2>
+        <p class="role">英语专业｜应届生｜商务助理方向</p>
+
+        <ul class="info-list">
+          <li>雅思 7.0</li>
+          <li>英语商务邮件写作</li>
+          <li>客户台账与信息整理</li>
+          <li>海外业务对接支持</li>
+        </ul>
+
+        <h4 style="margin-top:18px; margin-bottom:10px; font-size:16px;">能力标签</h4>
+        <div class="tag-group">
+          <span class="tag">英文沟通</span>
+          <span class="tag pink">细致执行</span>
+          <span class="tag purple">客户跟进</span>
+          <span class="tag">Excel台账</span>
+          <span class="tag">长期服务意识</span>
+        </div>
+      </aside>
+
+      <!-- 右栏：正文内容 -->
+      <main class="main-content">
+        <section class="section">
+          <h3 class="section-title">01 行业与岗位认知</h3>
+          <ul>
+            <li><strong>CRO行业：</strong>为医药研发赋能，帮助药企降低研发风险、加速新药上市；医药商务周期长，需要持续建立和维护客户信任。</li>
+            <li><strong>商务助理岗位：</strong>兼具后台流程支持与海外线索开拓，完整链路包括线索挖掘、客户画像、英文触达、展会破冰、商机转化。</li>
+            <li><strong>岗位要求：</strong>需要自驱力、细致度、沟通能力，也需要接受长期跟进且暂时没有反馈的工作节奏。</li>
+          </ul>
+          <span class="doodle-line doodle-1"></span>
+        </section>
+
+        <section class="section">
+          <h3 class="section-title">02 个人核心优势</h3>
+          <ul>
+            <li><strong>英语能力：</strong>雅思7.0，可独立撰写英文商务邮件，支持海外客户对接与展会英文沟通。</li>
+            <li><strong>业务理解：</strong>理解CRO商务转化周期较长，具备耐心跟进、持续维护客户关系的意识。</li>
+            <li><strong>办公能力：</strong>熟练使用Excel进行数据整理，可搭建客户台账，记录跟进节点并复盘业务效果。</li>
+            <li><strong>工作风格：</strong>细致、稳定、责任心强，适合商务流程支持、资料归档和客户信息维护。</li>
+          </ul>
+          <span class="doodle-line doodle-2"></span>
+        </section>
+
+        <section class="section">
+          <h3 class="section-title">03 短板与提升方案</h3>
+          <ul>
+            <li><strong>短板：</strong>英语本科背景，医药专业知识相对不足，对临床试验术语和CRO业务细节仍需学习。</li>
+            <li><strong>入职前：</strong>主动了解泰格医药业务范围、CRO术语、临床试验基础和药企合作模式。</li>
+            <li><strong>入职后：</strong>跟随带教学习标书、项目资料和商务流程，在实际对接中积累医药行业词汇与业务认知。</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h3 class="section-title">04 实习工作计划</h3>
+          <ul>
+            <li><strong>第一阶段：</strong>熟悉公司业务、内部流程、文档规范，快速上手资料整理、台账维护和基础信息核对。</li>
+            <li><strong>第二阶段：</strong>独立完成英文邮件初稿、会议纪要、客户资料归档，辅助商务团队进行日常对接。</li>
+            <li><strong>第三阶段：</strong>在带教指导下参与客户跟进，学习商务沟通逻辑，逐步形成对商机推进的理解。</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h3 class="section-title">05 职业规划</h3>
+          <p><strong>短期：</strong>踏实完成实习，吃透CRO商务流程，补齐医药行业知识，稳定交付助理岗位工作。</p>
+          <p style="margin-top:8px;"><strong>长期：</strong>深耕医药商务赛道，成长为熟悉国内外业务、能够独立对接客户的商务人才。</p>
+        </section>
+
+        <div class="summary-footer">
+          <p>我理解CRO商务看重严谨、耐心与长期积累。我愿意从助理岗位扎实做起，主动学习、稳定输出，期待加入泰格医药商务团队。</p>
+        </div>
+      </main>
     </div>
-
-    <section id="sec01">
-      <h2>01｜行业与岗位洞察</h2>
-      <div class="two‑col">
-        <div class="card‑green">
-          <h3>CRO行业认知</h3>
-          <ul>
-            <li>服务本质：CRO是医药研发的赋能者，依托专业临床试验服务，帮助客户降低研发风险、加速新药上市。</li>
-            <li>长线周期：医药商务合作周期漫长，从初次对接、建立信任到最终签约，需要持续耐心跟进。</li>
-          </ul>
-        </div>
-        <div class="card‑lavender">
-          <h3>商务助理岗位定位</h3>
-          <ul>
-            <li>高度自驱：既要完成严谨的后台流程支持，也要主动挖掘客户线索、撰写英文开发邮件。</li>
-            <li>复合能力：兼顾内勤支撑与海外业务拓展，对细致度、沟通能力都有较高要求。</li>
-          </ul>
-        </div>
-      </div>
-      <div style="margin‑top:20px;" class="card‑pink">
-        <h3>业务闭环</h3>
-        <p>线索挖掘　→　客户画像分析　→　英文触达　→　展会沟通破冰　→　商机跟进转化</p>
-      </div>
-    </section>
-
-    <section id="sec02">
-      <h2>02｜核心优势与胜任力</h2>
-      <div class="two‑col">
-        <div class="card‑pink">
-          <h3>跨境英语沟通能力</h3>
-          <p>雅思7.0，可独立完成英文商务邮件、海外客户对接、展会现场英文交流。</p>
-          <p style="margin‑top:10px;"><strong>岗位价值：</strong>适配海外客户开发、英文资料对接场景</p>
-        </div>
-        <div class="card‑lavender">
-          <h3>长线服务思维</h3>
-          <p>理解医药商务转化周期长，能接受多次跟进、暂时无反馈的情况，保持稳定、专业的沟通节奏。</p>
-          <p style="margin‑top:10px;"><strong>岗位价值：</strong>适配医药行业慢转化、重信任的业务特点</p>
-        </div>
-      </div>
-      <div class="card‑green" style="margin‑top:22px;">
-        <h3>数据整理与复盘能力</h3>
-        <p>熟练使用Excel透视表，可搭建客户台账，记录跟进节点，复盘触达效果，持续优化沟通方式。</p>
-        <p style="margin‑top:10px;"><strong>岗位价值：</strong>支撑线索管理、商务复盘等内勤工作</p>
-      </div>
-    </section>
-
-    <section id="sec03">
-      <h2>03｜短板认知与提升计划</h2>
-      <p style="margin‑bottom:18px;">本科为英语专业，医药专业知识储备有限；但岗位核心是商务沟通与客户维护，医药知识可以在入职后系统补齐。</p>
-      <div class="two‑col">
-        <div class="card‑lavender">
-          <h3>入职前 · 自主准备</h3>
-          <ul>
-            <li>学习泰格业务板块、CRO基础术语，理解临床试验基本流程。</li>
-            <li>了解头部药企、Biotech公司商业模式。</li>
-          </ul>
-        </div>
-        <div class="card‑pink">
-          <h3>入职后 · 持续提升</h3>
-          <ul>
-            <li>跟着导师学习标书、项目资料，积累行业专业表达。</li>
-            <li>整理高频医药商务英文词汇，搭建专属话术库。</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="sec04">
-      <h2>04｜职业发展规划｜扎根泰格长期成长</h2>
-      <div class="timeline‑item">
-        <h3>短期｜0‑6个月 实习期</h3>
-        <p>熟练掌握报价、合同、台账等基础内勤工作；独立完成海外线索英文触达，成为团队可靠的支撑人员。</p>
-      </div>
-      <div class="timeline‑item">
-        <h3>中期｜转正后 商务专员</h3>
-        <p>独立维护海外客户线索，跟进中小型项目商机，积累跨文化商务谈判经验。</p>
-      </div>
-      <div class="timeline‑item">
-        <h3>长期｜3‑5年 深耕出海医药商务</h3>
-        <p>成长为熟悉医药CRO业务、具备稳定海外客户资源的商务人员，陪伴泰格出海业务发展。</p>
-      </div>
-    </section>
-
-    <section id="sec05">
-      <h2>05｜人岗双向契合度</h2>
-      <div class="two‑col">
-        <div class="card‑green">
-          <h3>我的能力匹配岗位需求</h3>
-          <ul>
-            <li><strong>语言能力适配出海业务：</strong>雅思7.0，可独立撰写英文开发信、接待海外客户。</li>
-            <li><strong>性格适配长周期商务：</strong>耐心稳定，适合需要慢慢培育信任的医药客户关系。</li>
-            <li><strong>习惯适配内勤支撑：</strong>擅长台账整理、信息归档，细致有条理。</li>
-          </ul>
-        </div>
-        <div class="card‑lavender">
-          <h3>平台契合我的发展目标</h3>
-          <ul>
-            <li><strong>赛道优质：</strong>泰格是国内头部CRO，出海业务成熟，是医药商务很好的起点。</li>
-            <li><strong>成长路径清晰：</strong>商务助理→商务专员的晋升路线和我的规划一致。</li>
-            <li><strong>导师带教：</strong>希望在前辈指导下系统学习医药行业商务逻辑。</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="sec06">
-      <h2>06｜地域选择与稳定性</h2>
-      <div class="two‑col">
-        <div class="card‑pink">
-          <h3>求职意愿稳定</h3>
-          <p>主动选择嘉兴岗位，认可泰格平台，意向长期稳定发展，能够承受岗位压力。</p>
-        </div>
-        <div class="card‑green">
-          <h3>时间投入保障</h3>
-          <p>大四课程已结束，可保证每周5天全职实习，能够入住员工宿舍，接受展会出差安排。</p>
-        </div>
-      </div>
-      <div class="card‑lavender" style="margin‑top:22px;">
-        <h3>家庭支持</h3>
-        <p>家人支持我在嘉兴发展，毕业后打算长期留在这边，稳定性强。</p>
-      </div>
-    </section>
-
-    <section id="sec07">
-      <h2>07｜总结</h2>
-      <div class="summary‑box">
-        <div class="two‑col">
-          <div>
-            <p><strong>岗位理解：</strong>清楚CRO商务助理长周期、重信任的业务特点。</p>
-            <p><strong>能力匹配：</strong>英语能力、复盘整理能力可以支撑出海商务工作。</p>
-          </div>
-          <div>
-            <p><strong>成长方案：</strong>已经规划好医药知识的学习路线，持续补齐短板。</p>
-            <p><strong>稳定性：</strong>可全职实习、愿意长期扎根泰格。</p>
-          </div>
-        </div>
-        <div style="margin‑top:28px;text‑align:center;font‑size:17px;">
-          期待获得本次实习机会，踏实学习、认真跟进业务，和团队一起成长。
-        </div>
-      </div>
-    </section>
   </div>
-  <footer>
-    Thank You｜王静如 2026.11.10
-  </footer>
 </body>
 </html>
+
+    
+   
