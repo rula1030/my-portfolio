@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>商务助理实习生求职汇报 | 王静如</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* 完全取自原图主色 */
+  --paper: #f7f1e8;
+  --pink: #f6c6b8;
+  --purple: #9c69b9;
+  --green: #257c41;
+  --deep-green: #1f5f33;
+  --orange: #f16522;
+  --red: #e54424;
+  --ink: #3a3430;
+  --ink-soft: #6b645f;
+  --line: #d9cfbc;
+
+  /* 金边系统 */
+  --gold-thin: #c8a868;
+  --gold-pale: rgba(200, 168, 104, 0.45);
+  --gold-faint: rgba(200, 168, 104, 0.22);
+  --gold-soft: rgba(247, 241, 232, 0.9);
+}
+
+html, body {
+  color: var(--ink);
+  font-family: "Didot", "Bodoni", "Times New Roman", "Noto Serif SC", serif;
+  overflow-x: hidden;
+  background: var(--paper);
+}
+
+/* 保持原图完全不变 */
+.hermes-original {
+  position: fixed;
+  inset: 0;
+  background-image: url("hermes-bg.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+}
+
+/* 阅读进度条 */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, var(--gold-thin), var(--orange), var(--gold-thin));
+  z-index: 99;
+  transition: width 0.2s ease;
+}
+
+/* 页面外框 */
+.page-outer {
+  position: relative;
+  z-index: 2;
+  max-width: 1240px;
+  margin: 30px auto;
+  padding: 18px;
+  border: 1px solid var(--gold-pale);
+  box-shadow:
+    0 0 0 6px var(--gold-soft),
+    0 0 0 7px var(--gold-pale),
+    0 30px 60px rgba(58, 47, 35, 0.12);
+}
+
+/* 顶部品牌条 */
+.brand-bar {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--gold-pale);
+  margin-bottom: 18px;
+}
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 1px var(--gold-pale);
+}
+
+/* 目录导航 */
+.toc-nav {
+  position: relative;
+  z-index: 3;
+  background: rgba(247, 241, 232, 0.78);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--gold-pale);
+  margin-bottom: 18px;
+}
+
+.toc-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: 54px;
+}
+
+.toc-title {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--ink-soft);
+}
+
+.toc-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.toc-links a {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--ink);
+  padding: 6px 2px;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.toc-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 1px;
+  background: var(--orange);
+  transition: width 0.3s ease;
+}
+
+.toc-links a:hover::after,
+.toc-links a.active::after {
+  width: 100%;
+}
+
+.toc-links a:hover,
+.toc-links a.active {
+  color: var(--orange);
+}
+
+/* 主体报告区 */
+.report {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 18px;
+}
+
+/* 左侧导航 */
+.side-nav {
+  position: sticky;
+  top: 30px;
+  align-self: start;
+  background: rgba(247, 241, 232, 0.72);
+  border: 1px solid var(--gold-pale);
+  padding: 24px 0;
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 0 0 1px var(--gold-faint);
+}
+
+.side-nav-label {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--ink-soft);
+  padding: 0 24px 14px;
+  border-bottom: 1px solid var(--gold-pale);
+  margin-bottom: 14px;
+}
+
+.side-nav ul {
+  list-style: none;
+}
+
+.side-nav li {
+  padding: 11px 24px;
+  font-size: 13px;
+  color: var(--ink);
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: 0.3s ease;
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+.side-nav li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--orange);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+
+.side-nav li:hover::before,
+.side-nav li.active::before {
+  transform: scaleY(1);
+}
+
+.side-nav li:hover,
+.side-nav li.active {
+  color: var(--orange);
+  background: rgba(241, 101, 34, 0.08);
+}
+
+/* 右侧内容 */
+.content {
+  background: rgba(247, 241, 232, 0.76);
+  border: 1px solid var(--gold-pale);
+  padding: 36px;
+  min-height: 560px;
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 0 0 1px var(--gold-faint);
+}
+
+.section {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--gold-pale);
+}
+
+.section-num-wrap {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gold-pale);
+  border-radius: 50%;
+  transition: 0.4s ease;
+}
+
+.section-num-wrap:hover {
+  transform: rotate(-8deg) scale(1.06);
+  border-color: var(--orange);
+}
+
+.section-num {
+  font-family: "Didot", "Times New Roman", serif;
+  font-size: 24px;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.section-title {
+  font-size: 24px;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+.section-subtitle {
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: 0.2em;
+  margin-top: 4px;
+}
+
+/* 段落悬停 */
+.text-block p,
+.text-block li {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--ink);
+  transition: 0.3s ease;
+}
+
+.text-block p:hover,
+.text-block li:hover {
+  color: var(--orange);
+}
+
+.text-block strong {
+  color: var(--red);
+  font-weight: 500;
+}
+
+.text-block ul {
+  padding-left: 18px;
+  margin-top: 10px;
+}
+
+.text-block li {
+  margin-bottom: 8px;
+  list-style: none;
+  position: relative;
+  padding-left: 18px;
+}
+
+.text-block li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-thin);
+  border: 1px solid var(--gold-pale);
+}
+
+/* 页脚 */
+.report-footer {
+  position: relative;
+  z-index: 3;
+  max-width: 1240px;
+  margin: 18px auto 30px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: var(--ink-soft);
+}
+
+.footer-line {
+  width: 70px;
+  height: 2px;
+  background: var(--orange);
+  box-shadow: 0 0 0 1px var(--gold-pale);
+}
+
+/* 回到顶部 */
+.back-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-pale);
+  background: rgba(247, 241, 232, 0.85);
+  color: var(--orange);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+}
+
+.back-top.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-top:hover {
+  background: var(--orange);
+  color: var(--paper);
+}
+
+/* 响应式 */
+@media (max-width: 900px) {
+  .report {
+    grid-template-columns: 1fr;
+  }
+
+  .side-nav {
+    position: static;
+  }
+
+  .content {
+    padding: 24px;
+  }
+
+  .toc-links {
+    display: none;
+  }
+}
+</style>
+</head>
+
+<body>
+  <!-- 阅读进度条 -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- 保持原图完全不变 -->
+  <div class="hermes-original" aria-hidden="true"></div>
+
+  <div class="page-outer">
+    <!-- 顶部品牌条 -->
+    <div class="brand-bar">
+      <div class="brand-mark">
+        <span class="brand-dot"></span>
+        <span>PORTFOLIO REPORT</span>
+      </div>
+      <div>WANG JINGRU</div>
+    </div>
+
+    <!-- 目录导航 -->
+    <nav class="toc-nav">
+      <div class="toc-inner">
+        <div class="toc-title">目录 CONTENTS</div>
+        <ul class="toc-links">
+          <li><a href="#" class="toc-link active" data-target="sec-1">行业与岗位认知</a></li>
+          <li><a href="#" class="toc-link" data-target="sec-2">个人核心优势</a></li>
+          <li><a href="#" class="toc-link" data-target="sec-3">短板与提升</a></li>
+          <li><a href="#" class="toc-link" data-target="sec-4">实习计划</a></li>
+          <li><a href="#" class="toc-link" data-target="sec-5">职业规划</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 报告主体 -->
+    <div class="report">
+      <aside class="side-nav">
+        <div class="side-nav-label">章节 NAVIGATION</div>
+        <ul>
+          <li class="side-item active" data-target="sec-1">01 行业与岗位认知</li>
+          <li class="side-item" data-target="sec-2">02 个人核心优势</li>
+          <li class="side-item" data-target="sec-3">03 短板与提升</li>
+          <li class="side-item" data-target="sec-4">04 实习工作计划</li>
+          <li class="side-item" data-target="sec-5">05 职业规划</li>
+        </ul>
+      </aside>
+
+      <main class="content">
+        <article class="section active" id="sec-1">
+          <div class="section-header">
+            <div class="section-num-wrap">
+              <div class="section-num">01</div>
+            </div>
+            <div>
+              <h2 class="section-title">行业与岗位认知</h2>
+              <div class="section-subtitle">INDUSTRY & POSITION INSIGHT</div>
+            </div>
+          </div>
+
+          <div class="text-block">
+            <p><strong>CRO行业：</strong>为医药研发赋能，帮助药企降低研发风险、加速新药上市。医药商务合作周期长，客户信任需要长期维护，因此岗位不仅看重沟通能力，也看重耐心、细致和持续跟进意识。</p>
+
+            <ul>
+              <li><strong>自驱力：</strong>主动理解业务目标，推进客户信息整理与线索跟进。</li>
+              <li><strong>细致度：</strong>维护客户台账、记录跟进节点，减少信息遗漏。</li>
+              <li><strong>沟通能力：</strong>用英文邮件和展会沟通支持海外业务推进。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="section" id="sec-2">
+          <div class="section-header">
+            <div class="section-num-wrap">
+              <div class="section-num">02</div>
+            </div>
+            <div>
+              <h2 class="section-title">个人核心优势</h2>
+              <div class="section-subtitle">CORE STRENGTHS</div>
+            </div>
+          </div>
+
+          <div class="text-block">
+            <ul>
+              <li><strong>英语能力：</strong>雅思7.0，可独立撰写英文商务邮件，支持海外客户对接与展会英文沟通。</li>
+              <li><strong>业务理解：</strong>理解CRO商务转化周期较长，具备耐心跟进、持续维护客户关系的意识。</li>
+              <li><strong>办公能力：</strong>熟练使用Excel进行数据整理，可搭建客户台账，记录跟进节点并复盘业务效果。</li>
+              <li><strong>工作风格：</strong>细致、稳定、责任心强，适合商务流程支持、资料归档和客户信息维护。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="section" id="sec-3">
+          <div class="section-header">
+            <div class="section-num-wrap">
+              <div class="section-num">03</div>
+            </div>
+            <div>
+              <h2 class="section-title">短板与提升方案</h2>
+              <div class="section-subtitle">GAP & IMPROVEMENT PLAN</div>
+            </div>
+          </div>
+
+          <div class="text-block">
+            <p><strong>短板：</strong>医药专业知识相对不足，对临床试验术语和CRO业务细节仍需学习。</p>
+
+            <ul>
+              <li><strong>入职前：</strong>主动了解泰格医药业务范围、CRO术语、临床试验基础和药企合作模式。</li>
+              <li><strong>入职后：</strong>跟随带教学习标书、项目资料和商务流程，在实际对接中积累行业词汇与业务认知。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="section" id="sec-4">
+          <div class="section-header">
+            <div class="section-num-wrap">
+              <div class="section-num">04</div>
+            </div>
+            <div>
+              <h2 class="section-title">实习工作计划</h2>
+              <div class="section-subtitle">INTERNSHIP PLAN</div>
+            </div>
+          </div>
+
+          <div class="text-block">
+            <ul>
+              <li><strong>第一阶段：</strong>熟悉公司业务、内部流程、文档规范，快速上手资料整理、台账维护和基础信息核对。</li>
+              <li><strong>第二阶段：</strong>独立完成英文邮件初稿、会议纪要、客户资料归档，辅助商务团队进行日常对接。</li>
+              <li><strong>第三阶段：</strong>在带教指导下参与客户跟进，学习商务沟通逻辑，逐步形成对商机推进的理解。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="section" id="sec-5">
+          <div class="section-header">
+            <div class="section-num-wrap">
+              <div class="section-num">05</div>
+            </div>
+            <div>
+              <h2 class="section-title">职业规划</h2>
+              <div class="section-subtitle">CAREER VISION</div>
+            </div>
+          </div>
+
+          <div class="text-block">
+            <p><strong>短期：</strong>踏实完成实习，吃透CRO商务流程，补齐医药行业知识，稳定交付助理岗位工作。</p>
+            <p style="margin-top:10px;"><strong>长期：</strong>深耕医药商务赛道，成长为熟悉国内外业务、能够独立对接客户的商务人才。</p>
+            <p style="margin-top:18px;"><em>我理解CRO商务看重严谨、耐心与长期积累。我愿意从助理岗位扎实做起，主动学习、稳定输出，期待加入泰格医药商务团队。</em></p>
+          </div>
+        </article>
+      </main>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="report-footer">
+    <div>WANG JINGRU · PORTFOLIO REPORT</div>
+    <div class="footer-line"></div>
+    <div>INTERNSHIP APPLICATION</div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <div class="back-top" id="backTop" title="回到顶部">↑</div>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const sideItems = document.querySelectorAll('.side-item');
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const backTop = document.getElementById('backTop');
+    const readingProgress = document.getElementById('readingProgress');
+
+    function activateTarget(targetId) {
+      sections.forEach(sec => sec.classList.remove('active'));
+      sideItems.forEach(item => item.classList.remove('active'));
+      tocLinks.forEach(link => link.classList.remove('active'));
+
+      document.getElementById(targetId).classList.add('active');
+      document.querySelector(`.side-item[data-target="${targetId}"]`).classList.add('active');
+      document.querySelector(`.toc-link[data-target="${targetId}"]`).classList.add('active');
+    }
+
+    sideItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        activateTarget(item.dataset.target);
+      });
+    });
+
+    tocLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        activateTarget(link.dataset.target);
+      });
+    });
+
+    // 回到顶部
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+
+      readingProgress.style.width = progress + '%';
+
+      if (scrollTop > 400) {
+        backTop.classList.add('show');
+      } else {
+        backTop.classList.remove('show');
+      }
+    });
+
+    backTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
