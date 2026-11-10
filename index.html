@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商务助理实习生 · 求职汇报</title>
+<style>
+:root{
+  --cream:#f7f3e9;
+  --ink:#36322c;
+  --soft:#6b6358;
+  --gold:#b89668;
+  --gold-light:rgba(184,150,104,0.35);
+  --line:rgba(184,150,104,0.25);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Noto Serif SC","Songti SC",Georgia,serif;
+  color:var(--ink);
+  background-color:#ece6d7;
+  overflow:hidden;
+}
+
+/* 背景保持花朵图 */
+.bg-art{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  background-image:url("art.jpg");
+  background-size:cover;
+  background-position:center;
+}
+.bg-mask{
+  position:fixed;
+  inset:0;
+  z-index:1;
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(247,243,233,0.22), rgba(247,243,233,0.5) 60%, rgba(247,243,233,0.78) 100%);
+  pointer-events:none;
+}
+
+/* 顶部进度条 */
+.progress-wrap{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:2px;
+  z-index:120;
+  background:rgba(184,150,104,0.18);
+}
+.progress-bar{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg, var(--gold), #d4af7a);
+  transition:width .4s ease;
+}
+
+/* 顶部小图标 */
+.brand-icon{
+  position:fixed;
+  top:14px;right:18px;
+  z-index:110;
+  width:34px;height:34px;
+  border-radius:50%;
+  border:1px solid var(--gold-light);
+  background:rgba(247,243,233,0.72);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;
+  color:var(--gold);
+}
+
+/* 滚动容器 */
+.wrapper{
+  position:relative;
+  z-index:10;
+  height:100vh;
+  overflow-y:scroll;
+  scroll-snap-type:y mandatory;
+  scrollbar-width:none;
+}
+.wrapper::-webkit-scrollbar{display:none;}
+
+/* 每一章 */
+.section{
+  height:100vh;
+  scroll-snap-align:start;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px 24px;
+  position:relative;
+}
+
+/* 精致花边 */
+.flower{
+  position:absolute;
+  font-size:22px;
+  color:var(--gold);
+  opacity:.5;
+  pointer-events:none;
+}
+.flower.tl{top:14px;left:14px;}
+.flower.tr{top:14px;right:14px;}
+.flower.bl{bottom:14px;left:14px;}
+.flower.br{bottom:14px;right:14px;}
+
+/* 封面 */
+.cover{
+  flex-direction:column;
+  text-align:center;
+  color:#2c2823;
+}
+.cover .eyebrow{
+  font-family:Georgia,serif;
+  letter-spacing:.32em;
+  font-size:11px;
+  color:#5b4a33;
+  opacity:0;
+  animation:fadeUp 1s ease forwards .3s;
+}
+.cover h1{
+  font-size:clamp(28px,7vw,52px);
+  font-weight:400;
+  line-height:1.5;
+  margin:16px 0 18px;
+  opacity:0;
+  animation:fadeUp 1s ease forwards .5s;
+}
+.cover .cover-rule{
+  width:46px;height:1px;
+  background:var(--gold);
+  margin:0 auto 18px;
+  opacity:0;
+  animation:fadeUp 1s ease forwards .65s;
+}
+.cover .desc{
+  max-width:34em;
+  font-size:14px;
+  line-height:1.9;
+  color:#4b4338;
+  opacity:0;
+  animation:fadeUp 1s ease forwards .75s;
+}
+.enter-btn{
+  margin-top:30px;
+  padding:13px 26px;
+  border:1px solid var(--gold);
+  background:rgba(247,243,233,0.78);
+  color:var(--ink);
+  font-family:Georgia,serif;
+  letter-spacing:.24em;
+  font-size:11px;
+  cursor:pointer;
+  transition:.3s ease;
+  opacity:0;
+  animation:fadeUp 1s ease forwards .95s;
+}
+.enter-btn:hover{
+  background:var(--gold);
+  color:#fff;
+}
+
+/* 开放版式内容区 */
+.page-content{
+  width:min(1080px, 100%);
+  position:relative;
+}
+
+/* 章节标题区 */
+.section-header{
+  display:flex;
+  align-items:baseline;
+  gap:16px;
+  margin-bottom:22px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:14px;
+}
+.chapter-num{
+  font-family:Georgia,serif;
+  font-size:13px;
+  letter-spacing:.2em;
+  color:var(--gold);
+  border:1px solid var(--gold-light);
+  padding:7px 12px;
+  background:rgba(247,243,233,0.82);
+}
+.section-header h2{
+  font-size:clamp(22px,4vw,30px);
+  font-weight:400;
+  color:var(--ink);
+  letter-spacing:.04em;
+}
+
+/* 导语 */
+.lead{
+  background:rgba(247,243,233,0.76);
+  border-left:2px solid var(--gold);
+  padding:14px 18px;
+  font-size:14px;
+  line-height:1.9;
+  color:var(--ink);
+  margin-bottom:22px;
+  backdrop-filter:blur(6px);
+}
+
+/* 双栏信息块 */
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-bottom:22px;
+}
+.info-block{
+  background:rgba(247,243,233,0.72);
+  border:1px solid var(--gold-light);
+  padding:18px;
+  backdrop-filter:blur(6px);
+}
+.info-block h3{
+  font-size:15px;
+  color:var(--gold);
+  margin-bottom:12px;
+  padding-bottom:8px;
+  border-bottom:1px dashed var(--line);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.info-block ul{
+  padding-left:16px;
+}
+.info-block li{
+  font-size:13.5px;
+  line-height:1.85;
+  color:var(--soft);
+  margin-bottom:8px;
+}
+
+/* 表格区 */
+.table-block{
+  background:rgba(247,243,233,0.74);
+  border:1px solid var(--gold-light);
+  padding:18px;
+  margin-bottom:22px;
+  backdrop-filter:blur(6px);
+}
+.table-block h3{
+  font-size:15px;
+  color:var(--gold);
+  margin-bottom:14px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13.5px;
+}
+th{
+  text-align:left;
+  padding:10px 12px;
+  background:rgba(184,150,104,0.12);
+  color:var(--ink);
+  border-bottom:1px solid var(--line);
+}
+td{
+  padding:10px 12px;
+  border-bottom:1px dashed var(--line);
+  color:var(--soft);
+}
+
+/* 总结条 */
+.summary{
+  background:rgba(184,150,104,0.12);
+  border:1px solid var(--gold-light);
+  padding:14px 18px;
+  font-size:14px;
+  line-height:1.9;
+  color:var(--ink);
+}
+.summary strong{
+  color:var(--gold);
+  font-weight:500;
+}
+
+/* 标签列表 */
+.tag-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:12px;
+}
+.tag{
+  border:1px solid var(--gold-light);
+  background:rgba(247,243,233,0.76);
+  padding:8px 14px;
+  font-size:13px;
+  color:var(--ink);
+}
+
+/* 左侧导航 */
+.nav-side{
+  position:fixed;
+  left:22px;top:50%;
+  transform:translateY(-50%);
+  z-index:110;
+  display:flex;flex-direction:column;
+  gap:12px;
+}
+.nav-side a{
+  display:flex;align-items:center;gap:10px;
+  text-decoration:none;
+  font-family:Georgia,serif;
+  font-size:11px;
+  letter-spacing:.18em;
+  color:var(--soft);
+  transition:.3s;
+}
+.nav-side a .dot{
+  width:8px;height:8px;
+  border-radius:50%;
+  border:1px solid var(--gold);
+  background:transparent;
+  transition:.3s;
+}
+.nav-side a.active{color:var(--ink);}
+.nav-side a.active .dot{background:var(--gold);}
+.nav-side a .label{
+  opacity:0;
+  transform:translateX(-6px);
+  transition:.3s;
+  white-space:nowrap;
+}
+.nav-side a:hover .label{
+  opacity:1;
+  transform:translateX(0);
+}
+
+/* 页码 */
+.page-info{
+  position:fixed;
+  bottom:22px;right:22px;
+  z-index:110;
+  font-family:Georgia,serif;
+  letter-spacing:.2em;
+  font-size:12px;
+  padding:8px 14px;
+  border:1px solid var(--gold-light);
+  background:rgba(247,243,233,0.78);
+  color:var(--ink);
+}
+
+/* 翻页按钮 */
+.nav-buttons{
+  position:fixed;
+  bottom:22px;left:50%;
+  transform:translateX(-50%);
+  z-index:110;
+  display:flex;gap:10px;
+}
+.nav-buttons button{
+  width:36px;height:36px;
+  border-radius:50%;
+  border:1px solid var(--gold-light);
+  background:rgba(247,243,233,0.78);
+  color:var(--ink);
+  cursor:pointer;
+  transition:.3s;
+}
+.nav-buttons button:hover{
+  background:var(--gold);
+  color:#fff;
+  border-color:var(--gold);
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(12px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+@media (max-width:768px){
+  .nav-side{display:none;}
+  .two-col{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-art"></div>
+<div class="bg-mask"></div>
+
+<div class="progress-wrap">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<div class="brand-icon">❀</div>
+
+<nav class="nav-side" id="sideNav">
+  <a href="#cover" class="active" data-idx="0"><span class="dot"></span><span class="label">封面</span></a>
+  <a href="#s1" data-idx="1"><span class="dot"></span><span class="label">行业与岗位认知</span></a>
+  <a href="#s2" data-idx="2"><span class="dot"></span><span class="label">个人核心优势</span></a>
+  <a href="#s3" data-idx="3"><span class="dot"></span><span class="label">短板与提升</span></a>
+  <a href="#s4" data-idx="4"><span class="dot"></span><span class="label">实习计划</span></a>
+  <a href="#s5" data-idx="5"><span class="dot"></span><span class="label">结语</span></a>
+</nav>
+
+<div class="wrapper" id="wrap">
+
+  <!-- 封面 -->
+  <section class="section cover" id="cover">
+    <div class="flower tl">❀</div>
+    <div class="flower tr">❀</div>
+    <div class="flower bl">❀</div>
+    <div class="flower br">❀</div>
+
+    <div class="eyebrow">Candidate · Resume</div>
+    <h1>商务助理实习生<br>求职汇报</h1>
+    <div class="cover-rule"></div>
+    <p class="desc">英语专业，雅思7.0，具备良好英语读写能力，擅长商机挖掘、客户触达、信息整理与汇总，愿意配合团队完成商务拓展目标，稳定性强，沟通表达良好。</p>
+    <button class="enter-btn" onclick="go(1)">ENTER →</button>
+  </section>
+
+  <!-- 第1章：行业与岗位认知 -->
+  <section class="section" id="s1">
+    <div class="page-content">
+      <div class="flower tl">❀</div>
+      <div class="flower tr">❀</div>
+      <div class="flower bl">❀</div>
+      <div class="flower br">❀</div>
+
+      <div class="section-header">
+        <span class="chapter-num">01</span>
+        <h2>行业与岗位认知</h2>
+      </div>
+
+      <p class="lead">
+        本岗位是商务发展团队的前端支撑角色，核心目标是协助团队达成商务绩效，重点聚焦潜在客户与商机挖掘、信息流转、拓客方法复盘、展会获客等商务拓展工作。
+      </p>
+
+      <div class="two-col">
+        <div class="info-block">
+          <h3>❀ 岗位核心理解</h3>
+          <ul>
+            <li>作为商务发展团队前端，负责识别、触达市场潜在客户与商机</li>
+            <li>及时同步商机信息给到对应商务同事，做好信息流转</li>
+            <li>沉淀拓客经验，持续优化客户识别、触达方式</li>
+            <li>配合展会等线下场景，挖掘潜在合作机会</li>
+          </ul>
+        </div>
+
+        <div class="info-block">
+          <h3>❀ 岗位能力要求</h3>
+          <ul>
+            <li>具备英语能力，可阅读行业资料、对接信息</li>
+            <li>熟练Office，能够整理、汇总客户与商机台账</li>
+            <li>沟通表达开朗，主动，适合客户触达沟通</li>
+            <li>持续学习行业资讯，保持对市场的敏感度</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="table-block">
+        <h3>❀ 核心工作职责（对照JD）</h3>
+        <table>
+          <tr><th>工作模块</th><th>具体内容</th></tr>
+          <tr><td>商机挖掘触达</td><td>识别市场潜在客户、商机，触达后同步信息给商务团队</td></tr>
+          <tr><td>方法复盘优化</td><td>汇总拓客经验，结合市场环境调整客户开发方式</td></tr>
+          <tr><td>展会支持获客</td><td>参与行业展会，收集行业信息，现场识别、触达潜在客户</td></tr>
+          <tr><td>行业学习沉淀</td><td>定期学习行业资讯、专业知识，支撑商务拓展工作</td></tr>
+          <tr><td>其他商务任务</td><td>完成商务发展部、上级安排的其他相关工作</td></tr>
+        </table>
+      </div>
+
+      <div class="summary">
+        <strong>本章小结：</strong>这个岗位的核心不是内勤打杂，而是前端商务拓展支持，做好商机挖掘、信息传递、经验沉淀，帮助商务团队拿到更多有效线索。
+      </div>
+    </div>
+  </section>
+
+  <!-- 第2章：个人核心优势 -->
+  <section class="section" id="s2">
+    <div class="page-content">
+      <div class="flower tl">❀</div>
+      <div class="flower tr">❀</div>
+      <div class="flower bl">❀</div>
+      <div class="flower br">❀</div>
+
+      <div class="section-header">
+        <span class="chapter-num">02</span>
+        <h2>个人核心优势</h2>
+      </div>
+
+      <p class="lead">
+        我的优势贴合岗位的商务拓展需求：英语能力、信息整理、主动沟通、台账沉淀，能够承接线索挖掘、信息汇总、资料整理这类前端商务工作。
+      </p>
+
+      <div class="two-col">
+        <div class="info-block">
+          <h3>❀ 语言与信息处理优势</h3>
+          <ul>
+            <li>英语专业，雅思7.0，满足岗位英语能力要求</li>
+            <li>可阅读行业外文资料、整理客户信息、翻译相关资料</li>
+            <li>熟练Office，擅长搭建客户台账、线索表格，分类归档商机</li>
+          </ul>
+        </div>
+
+        <div class="info-block">
+          <h3>❀ 商务拓展适配优势</h3>
+          <ul>
+            <li>性格开朗，沟通主动，适合客户初次触达、线上沟通</li>
+            <li>有复盘意识，擅长记录总结方法，迭代拓客思路</li>
+            <li>稳定性强，能够持续跟进线索、长期积累客户资源</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="table-block">
+        <h3>❀ 我可以承接的岗位工作</h3>
+        <table>
+          <tr><th>岗位需求</th><th>我的匹配能力</th></tr>
+          <tr><td>商机、客户识别触达</td><td>主动挖掘线索，礼貌触达，记录客户意向，同步信息</td></tr>
+          <tr><td>拓客经验汇总优化</td><td>定期整理触达反馈，总结有效渠道与话术，输出复盘文档</td></tr>
+          <tr><td>展会支持</td><td>展会收集名片、对接客户、记录需求，会后整理线索台账</td></tr>
+          <tr><td>行业资讯学习</td><td>主动检索行业信息，整理简报，同步给团队参考</td></tr>
+        </table>
+      </div>
+
+      <div class="summary">
+        <strong>本章小结：</strong>我擅长前端线索挖掘、信息沉淀，同时英语能力可以辅助阅读行业资料，能稳定配合商务团队完成线索拓展的基础工作。
+        <div class="tag-list">
+          <span class="tag">英语能力</span>
+          <span class="tag">商机挖掘</span>
+          <span class="tag">客户触达</span>
+          <span class="tag">台账整理</span>
+          <span class="tag">复盘沉淀</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第3章：短板与提升 -->
+  <section class="section" id="s3">
+    <div class="page-content">
+      <div class="flower tl">❀</div>
+      <div class="flower tr">❀</div>
+      <div class="flower bl">❀</div>
+      <div class="flower br">❀</div>
+
+      <div class="section-header">
+        <span class="chapter-num">03</span>
+        <h2>短板与提升</h2>
+      </div>
+
+      <p class="lead">
+        我清楚自己缺少商务拓展的实战经验，对行业专业知识、商务谈判分寸还需要学习，我会针对性补齐，跟上团队拓客节奏。
+      </p>
+
+      <div class="two-col">
+        <div class="info-block">
+          <h3>❀ 当前短板</h3>
+          <ul>
+            <li>没有正式商务拓客、展会获客的完整实战经验</li>
+            <li>对行业专业知识、产业链信息积累不足</li>
+            <li>客户触达的话术、节奏把控还需要积累打磨</li>
+            <li>对商机分级、线索质量判断标准需要熟悉</li>
+          </ul>
+        </div>
+
+        <div class="info-block">
+          <h3>❀ 针对性提升计划</h3>
+          <ul>
+            <li>快速学习公司业务、行业知识，看懂业务逻辑</li>
+            <li>学习成熟商务同事的触达话术、跟进方式</li>
+            <li>建立线索台账，标记客户意向，持续复盘触达结果</li>
+            <li>展会前提前预习行业背景，做好客户沟通准备</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="table-block">
+        <h3>❀ 提升清单</h3>
+        <table>
+          <tr><th>学习方向</th><th>具体动作</th></tr>
+          <tr><td>业务&行业认知</td><td>阅读行业资讯、产品资料，定期输出简短学习笔记</td></tr>
+          <tr><td>拓客能力打磨</td><td>记录每次触达反馈，优化渠道、话术，沉淀SOP</td></tr>
+          <tr><td>线索管理</td><td>规范商机台账，区分高/中/低意向客户，方便团队跟进</td></tr>
+          <tr><td>展会实战</td><td>提前准备沟通提纲，会后第一时间整理线索、同步团队</td></tr>
+        </table>
+      </div>
+
+      <div class="summary">
+        <strong>本章小结：</strong>我愿意从基础线索挖掘做起，在一次次客户触达、展会实践中积累经验，持续优化拓客方法，给团队输送有效商机。
+      </div>
+    </div>
+  </section>
+
+  <!-- 第4章：实习计划 -->
+  <section class="section" id="s4">
+    <div class="page-content">
+      <div class="flower tl">❀</div>
+      <div class="flower tr">❀</div>
+      <div class="flower bl">❀</div>
+      <div class="flower br">❀</div>
+
+      <div class="section-header">
+        <span class="chapter-num">04</span>
+        <h2>实习计划</h2>
+      </div>
+
+      <p class="lead">
+        如果入职，我会循序渐进，先熟悉业务、学习标准，再独立开展线索挖掘、客户触达，配合团队完成商务绩效目标。
+      </p>
+
+      <div class="two-col">
+        <div class="info-block">
+          <h3>❀ 第一阶段：熟悉业务与规范</h3>
+          <ul>
+            <li>熟悉公司业务、产品、目标客户群体</li>
+            <li>学习线索识别标准、商机上报流程、台账规范</li>
+            <li>观摩学习同事的客户触达方式、沟通话术</li>
+            <li>同步学习行业资讯，建立基础认知</li>
+          </ul>
+        </div>
+
+        <div class="info-block">
+          <h3>❀ 第二阶段：独立开展拓客工作</h3>
+          <ul>
+            <li>自主挖掘潜在客户、商机，完成初次触达</li>
+            <li>及时把有效线索同步给商务发展团队</li>
+            <li>定期汇总触达经验，复盘渠道效果，优化方法</li>
+            <li>按需参与展会，现场挖掘、对接潜在客户</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="table-block">
+        <h3>❀ 实习阶段目标</h3>
+        <table>
+          <tr><th>阶段</th><th>目标</th><th>可交付成果</th></tr>
+          <tr><td>第1周</td><td>熟悉业务、流程与客户标准</td><td>业务学习笔记、线索台账模板</td></tr>
+          <tr><td>第2-4周</td><td>独立开展线索挖掘与客户触达</td><td>商机线索表、触达记录、每周复盘</td></tr>
+          <tr><td>第5-8周</td><td>稳定输出有效线索，优化拓客方法</td><td>渠道效果总结、优化后的触达SOP</td></tr>
+          <tr><td>后期</td><td>展会支持+长期线索沉淀</td><td>展会线索汇总表、客户信息归档</td></tr>
+        </table>
+      </div>
+
+      <div class="summary">
+        <strong>本章小结：</strong>我会以结果为导向，稳定产出有效商机线索，持续复盘迭代，协助商务发展团队达成绩效目标。
+      </div>
+    </div>
+  </section>
+
+  <!-- 第5章：结语 -->
+  <section class="section" id="s5">
+    <div class="page-content">
+      <div class="flower tl">❀</div>
+      <div class="flower tr">❀</div>
+      <div class="flower bl">❀</div>
+      <div class="flower br">❀</div>
+
+      <div class="section-header">
+        <span class="chapter-num">05</span>
+        <h2>结语</h2>
+      </div>
+
+      <p class="lead">
+        我理解这个岗位核心是协助商务发展团队完成绩效，重点在商机识别、客户触达、信息流转、经验沉淀、展会获客。我主动、稳定、具备英语能力，愿意投入商务拓展工作。
+      </p>
+
+      <div class="two-col">
+        <div class="info-block">
+          <h3>❀ 我的工作态度</h3>
+          <ul>
+            <li>主动挖掘线索，积极完成客户触达</li>
+            <li>如实记录商机信息，及时同步团队</li>
+            <li>坚持复盘，持续优化拓客思路</li>
+            <li>稳定性强，长期跟进线索，配合团队目标</li>
+          </ul>
+        </div>
+
+        <div class="info-block">
+          <h3>❀ 我能为团队带来的价值</h3>
+          <ul>
+            <li>稳定输出潜在客户与商机线索</li>
+            <li>规范的线索台账、触达记录，方便团队跟进</li>
+            <li>英语能力辅助查阅行业资料、整理信息</li>
+            <li>展会支持，现场拓展、收集潜在合作客户</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="summary">
+        <strong>结语：</strong>我非常希望加入泰格商务发展团队，担任商务助理实习生。我会主动挖掘商机、做好客户触达与信息沉淀，协助团队达成商务绩效目标，在岗位上持续成长。
+        <div class="tag-list">
+          <span class="tag">主动拓客</span>
+          <span class="tag">线索沉淀</span>
+          <span class="tag">稳定可靠</span>
+          <span class="tag">善于复盘</span>
+          <span class="tag">英语支持</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="page-info" id="pageNum">00 / 05</div>
+
+<div class="nav-buttons">
+  <button onclick="prev()">‹</button>
+  <button onclick="next()">›</button>
+</div>
+
+<script>
+const wrap = document.getElementById('wrap');
+const progressBar = document.getElementById('progressBar');
+const dots = document.querySelectorAll('#sideNav a');
+const pageNum = document.getElementById('pageNum');
+const sections = document.querySelectorAll('.section');
+const total = sections.length;
+
+function go(i){
+  sections[i].scrollIntoView({behavior:'smooth'});
+}
+function next(){
+  const idx = currentIndex();
+  if(idx < total - 1) go(idx + 1);
+}
+function prev(){
+  const idx = currentIndex();
+  if(idx > 0) go(idx - 1);
+}
+function currentIndex(){
+  const rate = wrap.scrollTop / (wrap.scrollHeight - wrap.clientHeight);
+  return Math.round(rate * (total - 1));
+}
+
+wrap.addEventListener('scroll', () => {
+  const rate = wrap.scrollTop / (wrap.scrollHeight - wrap.clientHeight);
+  progressBar.style.width = (rate * 100) + '%';
+
+  const idx = Math.round(rate * (total - 1));
+  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  pageNum.innerText = String(idx).padStart(2, '0') + ' / 05';
+});
+
+dots.forEach(dot => {
+  dot.addEventListener('click', e => {
+    e.preventDefault();
+    const idx = Number(dot.dataset.idx);
+    go(idx);
+  });
+});
+
+document.addEventListener('keydown', e => {
+  if(e.key === 'ArrowDown') next();
+  if(e.key === 'ArrowUp') prev();
+});
+</script>
+
+</body>
+</html>
